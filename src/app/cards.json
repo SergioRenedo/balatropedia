@@ -1,0 +1,559 @@
+{
+  "Tarot": [
+    {
+      "order": 1,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Fool",
+      "set": "Tarot",
+      "effect": "Disable Blind Effect",
+      "cost_mult": 1.0,
+      "id": "c_fool"
+    },
+    {
+      "order": 2,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Magician",
+      "set": "Tarot",
+      "effect": "Enhance",
+      "cost_mult": 1.0,
+      "id": "c_magician"
+    },
+    {
+      "order": 3,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The High Priestess",
+      "set": "Tarot",
+      "effect": "Round Bonus",
+      "cost_mult": 1.0,
+      "id": "c_high_priestess"
+    },
+    {
+      "order": 4,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Empress",
+      "set": "Tarot",
+      "effect": "Enhance",
+      "cost_mult": 1.0,
+      "id": "c_empress"
+    },
+    {
+      "order": 5,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Emperor",
+      "set": "Tarot",
+      "effect": "Round Bonus",
+      "cost_mult": 1.0,
+      "id": "c_emperor"
+    },
+    {
+      "order": 6,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Hierophant",
+      "set": "Tarot",
+      "effect": "Enhance",
+      "cost_mult": 1.0,
+      "id": "c_hierophant"
+    },
+    {
+      "order": 7,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Lovers",
+      "set": "Tarot",
+      "effect": "Enhance",
+      "cost_mult": 1.0,
+      "id": "c_lovers"
+    },
+    {
+      "order": 8,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Chariot",
+      "set": "Tarot",
+      "effect": "Enhance",
+      "cost_mult": 1.0,
+      "id": "c_chariot"
+    },
+    {
+      "order": 9,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "Justice",
+      "set": "Tarot",
+      "effect": "Enhance",
+      "cost_mult": 1.0,
+      "id": "c_justice"
+    },
+    {
+      "order": 10,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Hermit",
+      "set": "Tarot",
+      "effect": "Dollar Doubler",
+      "cost_mult": 1.0,
+      "id": "c_hermit"
+    },
+    {
+      "order": 11,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Wheel of Fortune",
+      "set": "Tarot",
+      "effect": "Round Bonus",
+      "cost_mult": 1.0,
+      "id": "c_wheel_of_fortune"
+    },
+    {
+      "order": 12,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "Strength",
+      "set": "Tarot",
+      "effect": "Round Bonus",
+      "cost_mult": 1.0,
+      "id": "c_strength"
+    },
+    {
+      "order": 13,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Hanged Man",
+      "set": "Tarot",
+      "effect": "Card Removal",
+      "cost_mult": 1.0,
+      "id": "c_hanged_man"
+    },
+    {
+      "order": 14,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "Death",
+      "set": "Tarot",
+      "effect": "Card Conversion",
+      "cost_mult": 1.0,
+      "id": "c_death"
+    },
+    {
+      "order": 15,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "Temperance",
+      "set": "Tarot",
+      "effect": "Joker Payout",
+      "cost_mult": 1.0,
+      "id": "c_temperance"
+    },
+    {
+      "order": 16,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Devil",
+      "set": "Tarot",
+      "effect": "Enhance",
+      "cost_mult": 1.0,
+      "id": "c_devil"
+    },
+    {
+      "order": 17,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Tower",
+      "set": "Tarot",
+      "effect": "Enhance",
+      "cost_mult": 1.0,
+      "id": "c_tower"
+    },
+    {
+      "order": 18,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Star",
+      "set": "Tarot",
+      "effect": "Suit Conversion",
+      "cost_mult": 1.0,
+      "id": "c_star"
+    },
+    {
+      "order": 19,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Moon",
+      "set": "Tarot",
+      "effect": "Suit Conversion",
+      "cost_mult": 1.0,
+      "id": "c_moon"
+    },
+    {
+      "order": 20,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The Sun",
+      "set": "Tarot",
+      "effect": "Suit Conversion",
+      "cost_mult": 1.0,
+      "id": "c_sun"
+    },
+    {
+      "order": 21,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "Judgement",
+      "set": "Tarot",
+      "effect": "Random Joker",
+      "cost_mult": 1.0,
+      "id": "c_judgement"
+    },
+    {
+      "order": 22,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "name": "The World",
+      "set": "Tarot",
+      "effect": "Suit Conversion",
+      "cost_mult": 1.0,
+      "id": "c_world"
+    }
+  ],
+  "Planet": [
+    {
+      "order": 1,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Mercury",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_mercury"
+    },
+    {
+      "order": 2,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Venus",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_venus"
+    },
+    {
+      "order": 3,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Earth",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_earth"
+    },
+    {
+      "order": 4,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Mars",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_mars"
+    },
+    {
+      "order": 5,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Jupiter",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_jupiter"
+    },
+    {
+      "order": 6,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Saturn",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_saturn"
+    },
+    {
+      "order": 7,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Uranus",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_uranus"
+    },
+    {
+      "order": 8,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Neptune",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_neptune"
+    },
+    {
+      "order": 9,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Pluto",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_pluto"
+    },
+    {
+      "order": 10,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Planet X",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_planet_x"
+    },
+    {
+      "order": 11,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Ceres",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_ceres"
+    },
+    {
+      "order": 12,
+      "discovered": false,
+      "cost": 3,
+      "consumeable": true,
+      "freq": 1,
+      "name": "Eris",
+      "set": "Planet",
+      "effect": "Hand Upgrade",
+      "cost_mult": 1.0,
+      "id": "c_eris"
+    }
+  ],
+  "Spectral": [
+    {
+      "order": 1,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Familiar",
+      "set": "Spectral",
+      "id": "c_familiar"
+    },
+    {
+      "order": 2,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Grim",
+      "set": "Spectral",
+      "id": "c_grim"
+    },
+    {
+      "order": 3,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Incantation",
+      "set": "Spectral",
+      "id": "c_incantation"
+    },
+    {
+      "order": 4,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Talisman",
+      "set": "Spectral",
+      "id": "c_talisman"
+    },
+    {
+      "order": 5,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Aura",
+      "set": "Spectral",
+      "id": "c_aura"
+    },
+    {
+      "order": 6,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Wraith",
+      "set": "Spectral",
+      "id": "c_wraith"
+    },
+    {
+      "order": 7,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Sigil",
+      "set": "Spectral",
+      "id": "c_sigil"
+    },
+    {
+      "order": 8,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Ouija",
+      "set": "Spectral",
+      "id": "c_ouija"
+    },
+    {
+      "order": 9,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Ectoplasm",
+      "set": "Spectral",
+      "id": "c_ectoplasm"
+    },
+    {
+      "order": 10,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Immolate",
+      "set": "Spectral",
+      "id": "c_immolate"
+    },
+    {
+      "order": 11,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Ankh",
+      "set": "Spectral",
+      "id": "c_ankh"
+    },
+    {
+      "order": 12,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Deja Vu",
+      "set": "Spectral",
+      "id": "c_deja_vu"
+    },
+    {
+      "order": 13,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Hex",
+      "set": "Spectral",
+      "id": "c_hex"
+    },
+    {
+      "order": 14,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Trance",
+      "set": "Spectral",
+      "id": "c_trance"
+    },
+    {
+      "order": 15,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Medium",
+      "set": "Spectral",
+      "id": "c_medium"
+    },
+    {
+      "order": 16,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Cryptid",
+      "set": "Spectral",
+      "id": "c_cryptid"
+    },
+    {
+      "order": 17,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "The Soul",
+      "set": "Spectral",
+      "effect": "Unlocker",
+      "hidden": true,
+      "id": "c_soul"
+    },
+    {
+      "order": 18,
+      "discovered": false,
+      "cost": 4,
+      "consumeable": true,
+      "name": "Black Hole",
+      "set": "Spectral",
+      "hidden": true,
+      "id": "c_black_hole"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+"use client";
+
+import { useState, useRef, useEffect, useCallback } from "react";
+import JokerCard from "./jokerCard";
+import JokerModal from "./jokerModal";
+import jokers from "../app/jokers_final.json";
+import FluidBackground from "./fluidBackground";
+
+
+type Rarity = "All" | "Common" | "Uncommon" | "Rare" | "Legendary";
+type Effect = "None" | "Negative" | "Polychrome";
+
+type Joker = {
+  id: string;
+  name: string;
+  cost: string | number;
+  order: number;
+  rarity: Exclude<Rarity, "All">; // Solo los valores de rareza, sin "All"
+  description: string;
+  unlock_condition: string; // Condición de desbloqueo opcional
+};
+
+const rarityOptions: { label: string; value: Rarity }[] = [
+  { label: "All", value: "All" },
+  { label: "Common", value: "Common" },
+  { label: "Uncommon", value: "Uncommon" },
+  { label: "Rare", value: "Rare" },
+  { label: "Legendary", value: "Legendary" },
+];
+
+const effectOptions: { label: string; value: Effect }[] = [
+  { label: "Normal", value: "None" },
+  { label: "Negative", value: "Negative" },
+  { label: "Polychrome", value: "Polychrome" },
+];
+
+export default function JokersPage() {
+  const [search, setSearch] = useState("");
+  const [rarity, setRarity] = useState<Rarity>("All");
+  const [effect, setEffect] = useState<Effect>("None");
+
+  // Modal state
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedJoker, setSelectedJoker] = useState<(Joker & { image: string }) | null>(null);
+
+  // --- FILTERING ---
+  const filteredJokers = jokers
+    .map(j => ({
+      id: j.id,
+      name: j.name,
+      cost: j.cost,
+      order:j.order,
+      rarity: j.rarity as Joker["rarity"],
+      description: j.description,
+      unlock_condition: j.unlock_condition
+    }))
+    .filter(j =>
+      (rarity === "All" || j.rarity === rarity) &&
+      j.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+
+  // Modal click handler (memoized)
+  const handleJokerClick = useCallback((joker: Joker) => {
+    setSelectedJoker({
+      ...joker,
+      image: `/sprites/jokers/${joker.id}.webp`
+    });
+    setModalOpen(true);
+  }, []);
+
+  // Disable background scroll when modal is open
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modalOpen]);
+
+  // --- RENDER ---
+  return (
+    <main className="flex flex-col min-h-screen items-center bg-gradient-to-b from-[#202930] via-[#101218] to-[#19171c] pb-24">
+      {/* BACKGROUND */}
+      <FluidBackground effect={effect} />
+      {/* HEADER */}
+      <section className="w-full max-w-4xl mx-auto px-3 sm:px-8 pt-10 pb-4 flex flex-col items-center relative z-10">
+        <div className="flex justify-center w-full mb-4">
+          <a
+            href="/"
+            className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl shadow-lg text-base sm:text-lg transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full sm:w-auto text-center"
+            style={{ maxWidth: '20rem' }}
+          >
+          Back to Main Page
+          </a>
+        </div>
+        <h1 className="font-m6x11plus text-4xl md:text-5xl text-white drop-shadow-lg mb-2 text-center tracking-tight">
+          Balatro Jokers Database
+        </h1>
+        <p className="text-base text-white/90 drop-shadow font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
+          Browse all Jokers from <span className="text-red-500">Balatro</span>!
+          Search, filter by rarity, and discover every effect and secret interaction. Click a Joker for more info.
+        </p>
+        {/* Go Back to Main Page Button */}
+        {/* Search + filters */}
+        <div className="flex flex-col sm:flex-row gap-3 w-full justify-center items-center mb-4">
+          <input
+            type="text" 
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Search jokers..."
+            className="px-4 py-2 font-m6x11plus rounded-xl bg-white/10 text-white placeholder-white/70 border border-white/30 hover:bg-white/20 transition outline-none shadow-md"
+          />
+          <select
+            value={rarity}
+            onChange={e => setRarity(e.target.value as Rarity)}
+            className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md"
+          >
+            {rarityOptions.map(opt => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+          <select
+            value={effect}
+            onChange={e => setEffect(e.target.value as Effect)}
+            className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md"
+          >
+            {effectOptions.map(opt => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+        </div>
+      </section>
+
+      {/* GRID */}
+      <section className="w-full max-w-screen-2xl mx-auto px-2 sm:px-6 py-6 flex flex-col items-center">
+        <div className="
+          grid
+          w-full
+          justify-center
+          gap-x-2 gap-y-4
+          [grid-template-columns:repeat(auto-fit,minmax(10rem,1fr))]
+        ">
+          {filteredJokers.map((joker, idx) => (
+            <JokerCard
+              key={joker.id}
+              name={joker.name}
+              order={joker.order}
+              rarity={joker.rarity}
+              image={`/sprites/jokers/${joker.id}.webp`}
+              onClick={() => handleJokerClick(joker)}
+              priority={idx < 30}
+              effect={effect}
+            />
+          ))}
+        </div>
+        {/* Sin resultados */}
+        {filteredJokers.length === 0 && (
+          <div className="my-12 text-zinc-300 font-m6x11plus text-xl">No jokers found :(</div>
+        )}
+
+        {/* Go Back to Top Button */}
+        {!modalOpen && (
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-8 right-8 z-50 px-4 py-2 rounded-full bg-black/70 text-white font-m6x11plus shadow-lg hover:bg-black/90 transition"
+            aria-label="Go back to top"
+          >
+            ↑ Top
+          </button>
+        )}
+
+        {/* Modal */}
+        <JokerModal
+          open={modalOpen}
+          joker={selectedJoker}
+          onClose={() => setModalOpen(false)}
+        />
+      </section>
+    </main>
+  );
+}
