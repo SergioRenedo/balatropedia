@@ -9,7 +9,8 @@
       "set": "Tarot",
       "effect": "Disable Blind Effect",
       "cost_mult": 1.0,
-      "id": "c_fool"
+      "id": "c_fool",
+      "description": "Creates the last Tarot or Planet card used during this run The Fool excluded"
     },
     {
       "order": 2,
@@ -20,7 +21,8 @@
       "set": "Tarot",
       "effect": "Enhance",
       "cost_mult": 1.0,
-      "id": "c_magician"
+      "id": "c_magician",
+      "description": "Enhances 2 selected cards to Lucky Cards"
     },
     {
       "order": 3,
@@ -31,7 +33,8 @@
       "set": "Tarot",
       "effect": "Round Bonus",
       "cost_mult": 1.0,
-      "id": "c_high_priestess"
+      "id": "c_high_priestess",
+      "description": "Creates up to 2 random Planet cards (Must have room)"
     },
     {
       "order": 4,
@@ -42,7 +45,9 @@
       "set": "Tarot",
       "effect": "Enhance",
       "cost_mult": 1.0,
-      "id": "c_empress"
+      "id": "c_empress",
+      "description": "Enhances 2 selected cards to Mult Cards"
+
     },
     {
       "order": 5,
@@ -54,6 +59,7 @@
       "effect": "Round Bonus",
       "cost_mult": 1.0,
       "id": "c_emperor"
+      ,"description": "Creates up to 2 random Tarot cards (Must have room)"
     },
     {
       "order": 6,
@@ -65,6 +71,7 @@
       "effect": "Enhance",
       "cost_mult": 1.0,
       "id": "c_hierophant"
+      ,"description": "Enhances 2 selected cards to Bonus Cards"
     },
     {
       "order": 7,
@@ -75,7 +82,8 @@
       "set": "Tarot",
       "effect": "Enhance",
       "cost_mult": 1.0,
-      "id": "c_lovers"
+      "id": "c_lovers",
+      "description": "Enhances 1 selected card into a Wild Card"
     },
     {
       "order": 8,
@@ -86,7 +94,8 @@
       "set": "Tarot",
       "effect": "Enhance",
       "cost_mult": 1.0,
-      "id": "c_chariot"
+      "id": "c_chariot",
+      "description": "Enhances 1 selected card into a Steel Card"
     },
     {
       "order": 9,
@@ -97,7 +106,8 @@
       "set": "Tarot",
       "effect": "Enhance",
       "cost_mult": 1.0,
-      "id": "c_justice"
+      "id": "c_justice",
+      "description": "Enhances 1 selected card into a Glass Card"
     },
     {
       "order": 10,
@@ -108,7 +118,8 @@
       "set": "Tarot",
       "effect": "Dollar Doubler",
       "cost_mult": 1.0,
-      "id": "c_hermit"
+      "id": "c_hermit",
+      "description": "Doubles money (Max of $20)"
     },
     {
       "order": 11,
@@ -119,7 +130,9 @@
       "set": "Tarot",
       "effect": "Round Bonus",
       "cost_mult": 1.0,
-      "id": "c_wheel_of_fortune"
+      "id": "c_wheel_of_fortune",
+      "description": "1 in 4 chance to add Foil, Holographic, or Polychrome edition to a random Joker"
+
     },
     {
       "order": 12,
@@ -130,7 +143,8 @@
       "set": "Tarot",
       "effect": "Round Bonus",
       "cost_mult": 1.0,
-      "id": "c_strength"
+      "id": "c_strength",
+      "description": "Increases rank of up to 2 selected cards by 1"
     },
     {
       "order": 13,
@@ -141,7 +155,8 @@
       "set": "Tarot",
       "effect": "Card Removal",
       "cost_mult": 1.0,
-      "id": "c_hanged_man"
+      "id": "c_hanged_man",
+      "description": "Destroys up to 2 selected cards"
     },
     {
       "order": 14,
@@ -152,7 +167,8 @@
       "set": "Tarot",
       "effect": "Card Conversion",
       "cost_mult": 1.0,
-      "id": "c_death"
+      "id": "c_death",
+      "description": "Select 2 cards, convert the left card into the right card (Drag to rearrange)"
     },
     {
       "order": 15,
@@ -163,7 +179,8 @@
       "set": "Tarot",
       "effect": "Joker Payout",
       "cost_mult": 1.0,
-      "id": "c_temperance"
+      "id": "c_temperance",
+      "description": "Gives the total sell value of all current Jokers (Max of $50)"
     },
     {
       "order": 16,
@@ -174,7 +191,9 @@
       "set": "Tarot",
       "effect": "Enhance",
       "cost_mult": 1.0,
-      "id": "c_devil"
+      "id": "c_devil",
+      "description": "Enhances 1 selected card into a Gold Card"
+
     },
     {
       "order": 17,
@@ -185,7 +204,8 @@
       "set": "Tarot",
       "effect": "Enhance",
       "cost_mult": 1.0,
-      "id": "c_tower"
+      "id": "c_tower",
+      "description": "Enhances 1 selected card into a Stone Card"
     },
     {
       "order": 18,
@@ -196,7 +216,9 @@
       "set": "Tarot",
       "effect": "Suit Conversion",
       "cost_mult": 1.0,
-      "id": "c_star"
+      "id": "c_star",
+      "description": "Converts up to 3 selected cards to  Diamonds"
+
     },
     {
       "order": 19,
@@ -207,7 +229,9 @@
       "set": "Tarot",
       "effect": "Suit Conversion",
       "cost_mult": 1.0,
-      "id": "c_moon"
+      "id": "c_moon",
+      "description": "Converts up to 3 selected cards to  Clubs"
+
     },
     {
       "order": 20,
@@ -218,7 +242,9 @@
       "set": "Tarot",
       "effect": "Suit Conversion",
       "cost_mult": 1.0,
-      "id": "c_sun"
+      "id": "c_sun",
+      "description": "Converts up to 3 selected cards to  Hearts"
+
     },
     {
       "order": 21,
@@ -230,6 +256,7 @@
       "effect": "Random Joker",
       "cost_mult": 1.0,
       "id": "c_judgement"
+      ,"description": "Creates a random Joker card (Must have room)"
     },
     {
       "order": 22,
@@ -241,6 +268,7 @@
       "effect": "Suit Conversion",
       "cost_mult": 1.0,
       "id": "c_world"
+      ,"description": "Converts up to 3 selected cards to Spades"
     }
   ],
   "Planet": [
@@ -254,7 +282,9 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_mercury"
+      "id": "c_mercury",
+      "description": "Increases Pair hand value by +1 Mult and +15 Chips"
+
     },
     {
       "order": 2,
@@ -266,7 +296,9 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_venus"
+      "id": "c_venus",
+      "description": "Increases Three of a Kind hand value by +2 Mult and +20 Chips"
+
     },
     {
       "order": 3,
@@ -278,7 +310,8 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_earth"
+      "id": "c_earth",
+      "description": "Increases Full House hand value by +2 Mult and +25 Chips"
     },
     {
       "order": 4,
@@ -290,7 +323,8 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_mars"
+      "id": "c_mars",
+      "description": "Increases Four of a Kind hand value by +3 Mult and +30 Chips"
     },
     {
       "order": 5,
@@ -302,7 +336,8 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_jupiter"
+      "id": "c_jupiter",
+      "description": "Increases Flush hand value by +2 Mult and +15 Chips"
     },
     {
       "order": 6,
@@ -314,7 +349,8 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_saturn"
+      "id": "c_saturn",
+      "description": "Increases Straight hand value by +3 Mult and +30 Chips"
     },
     {
       "order": 7,
@@ -326,7 +362,9 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_uranus"
+      "id": "c_uranus",
+      "description": "Increases Two Pair hand value by +1 Mult and +20 Chips"
+
     },
     {
       "order": 8,
@@ -338,7 +376,8 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_neptune"
+      "id": "c_neptune",
+      "description": "Increases Straight Flush hand value by +4 Mult and +40 Chips"
     },
     {
       "order": 9,
@@ -350,7 +389,8 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_pluto"
+      "id": "c_pluto",
+      "description": "Increases High Card hand value by +1 Mult and +10 Chips"
     },
     {
       "order": 10,
@@ -362,7 +402,8 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_planet_x"
+      "id": "c_planet_x",
+      "description": "Increases Five of a Kind hand value by +3 Mult and +35 Chips"
     },
     {
       "order": 11,
@@ -374,7 +415,8 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_ceres"
+      "id": "c_ceres",
+      "description": "Increases Flush House hand value by +4 Mult and +40 Chips"
     },
     {
       "order": 12,
@@ -386,7 +428,9 @@
       "set": "Planet",
       "effect": "Hand Upgrade",
       "cost_mult": 1.0,
-      "id": "c_eris"
+      "id": "c_eris",
+      "description": "Increases Flush Five hand value by +3 Mult and +50 Chips"
+
     }
   ],
   "Spectral": [
@@ -397,7 +441,8 @@
       "consumeable": true,
       "name": "Familiar",
       "set": "Spectral",
-      "id": "c_familiar"
+      "id": "c_familiar",
+      "description": "Destroy 1 random card in your hand, add 3 random Enhanced face cards to your hand"
     },
     {
       "order": 2,
@@ -406,7 +451,8 @@
       "consumeable": true,
       "name": "Grim",
       "set": "Spectral",
-      "id": "c_grim"
+      "id": "c_grim",
+      "description": "Destroy 1 random card in your hand, add 2 random Enhanced Joker Aces to your hand"
     },
     {
       "order": 3,
@@ -415,7 +461,8 @@
       "consumeable": true,
       "name": "Incantation",
       "set": "Spectral",
-      "id": "c_incantation"
+      "id": "c_incantation",
+      "description": "Destroy 1 random card in your hand, add 4 random Enhanced numbered cards to your hand"
     },
     {
       "order": 4,
@@ -424,7 +471,8 @@
       "consumeable": true,
       "name": "Talisman",
       "set": "Spectral",
-      "id": "c_talisman"
+      "id": "c_talisman",
+      "description": "Add a Gold Seal to 1 selected card in your hand"
     },
     {
       "order": 5,
@@ -433,7 +481,8 @@
       "consumeable": true,
       "name": "Aura",
       "set": "Spectral",
-      "id": "c_aura"
+      "id": "c_aura",
+      "description": "Add Foil, Holographic, or Polychrome effect to 1 selected card in hand"
     },
     {
       "order": 6,
@@ -442,7 +491,8 @@
       "consumeable": true,
       "name": "Wraith",
       "set": "Spectral",
-      "id": "c_wraith"
+      "id": "c_wraith",
+      "description": "Creates a random Rare Joker, sets money to $0"
     },
     {
       "order": 7,
@@ -451,7 +501,8 @@
       "consumeable": true,
       "name": "Sigil",
       "set": "Spectral",
-      "id": "c_sigil"
+      "id": "c_sigil",
+      "description": "Converts all cards in hand to a single random suit"
     },
     {
       "order": 8,
@@ -460,7 +511,8 @@
       "consumeable": true,
       "name": "Ouija",
       "set": "Spectral",
-      "id": "c_ouija"
+      "id": "c_ouija",
+      "description": "Converts all cards in hand to a single random rank -1 hand size"
     },
     {
       "order": 9,
@@ -469,7 +521,8 @@
       "consumeable": true,
       "name": "Ectoplasm",
       "set": "Spectral",
-      "id": "c_ectoplasm"
+      "id": "c_ectoplasm",
+      "description": "Add Negative to a random Joker, -1 hand size"
     },
     {
       "order": 10,
@@ -478,7 +531,8 @@
       "consumeable": true,
       "name": "Immolate",
       "set": "Spectral",
-      "id": "c_immolate"
+      "id": "c_immolate",
+      "description": "Destroys 5 random cards in hand, gain $20"
     },
     {
       "order": 11,
@@ -487,7 +541,8 @@
       "consumeable": true,
       "name": "Ankh",
       "set": "Spectral",
-      "id": "c_ankh"
+      "id": "c_ankh",
+      "description": "Create a copy of a random Joker, destroy all other Jokers (Removes Negative from copy)"
     },
     {
       "order": 12,
@@ -496,7 +551,8 @@
       "consumeable": true,
       "name": "Deja Vu",
       "set": "Spectral",
-      "id": "c_deja_vu"
+      "id": "c_deja_vu",
+      "description": "Add a Red Seal to 1 selected card in your hand"
     },
     {
       "order": 13,
@@ -505,7 +561,8 @@
       "consumeable": true,
       "name": "Hex",
       "set": "Spectral",
-      "id": "c_hex"
+      "id": "c_hex",
+      "description": "Add Polychrome to a random Joker, destroy all other Jokers"
     },
     {
       "order": 14,
@@ -514,7 +571,8 @@
       "consumeable": true,
       "name": "Trance",
       "set": "Spectral",
-      "id": "c_trance"
+      "id": "c_trance",
+      "description": "Add a Blue Seal to 1 selected card in your hand"
     },
     {
       "order": 15,
@@ -523,7 +581,8 @@
       "consumeable": true,
       "name": "Medium",
       "set": "Spectral",
-      "id": "c_medium"
+      "id": "c_medium",
+      "description": "Add a Purple Seal to 1 selected card in your hand"
     },
     {
       "order": 16,
@@ -532,7 +591,8 @@
       "consumeable": true,
       "name": "Cryptid",
       "set": "Spectral",
-      "id": "c_cryptid"
+      "id": "c_cryptid",
+      "description": "Create 2 copies of 1 selected card in your hand"
     },
     {
       "order": 17,
@@ -543,7 +603,8 @@
       "set": "Spectral",
       "effect": "Unlocker",
       "hidden": true,
-      "id": "c_soul"
+      "id": "c_soul",
+      "description": "Creates a Legendary Joker (Must have room)"
     },
     {
       "order": 18,
@@ -553,7 +614,8 @@
       "name": "Black Hole",
       "set": "Spectral",
       "hidden": true,
-      "id": "c_black_hole"
+      "id": "c_black_hole",
+      "description": "Upgrade every poker hand by 1 level"
     }
   ]
 }

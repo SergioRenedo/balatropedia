@@ -86,16 +86,38 @@ export default function Card({ id, name, onClick, priority = false }) {
             x: shadowX,
             y: shadowY,
             opacity: 0.20,
-            height: "100%",
-            width: "120%"
+            height: "110%",
+            width: "125%",
           }}
-          className="absolute top-0 left-1/2 translate-x-[-50%] bg-black rounded-xl z-0 scale-90 pointer-events-none w-[120%]"
+          className="absolute bg-black rounded-xl z-0 scale-90 pointer-events-none w-[160%] h-[140%]"
         />
-        {/* Card image */}
+        {/* Card image with special overlay for c_soul */}
         <div className="absolute inset-0 z-10 rounded-xl overflow-hidden">
+          {/* Animated overlay for c_soul */}
+          {id === "c_soul" && (
+            <motion.div
+              initial={{ rotate: -10, scale: 1 }}
+              animate={{ rotate: [ -10, 10, -10 ], scale: [1, 1.12, 1] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] z-20 pointer-events-none select-none"
+              style={{ width: '55%', height: '55%' }}
+            >
+              <Image
+                src="/sprites/cards/c_soul_2.webp"
+                alt="c_soul_2"
+                width={128 * 0.9}
+                height={176 * 0.9}
+                priority={priority}
+                className="object-contain pointer-events-none select-none"
+                draggable={false}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </motion.div>
+          )}
+          {/* Main card image */}
           <Image
             src={`/sprites/cards/${id}.webp`}
-            alt={name}
+            alt={name ? name : `Card ${id}`}
             fill
             priority={priority}
             sizes="(max-width: 640px) 7rem, (max-width: 768px) 8rem, (max-width: 1024px) 9rem, (max-width: 1280px) 10rem, 11rem"
@@ -104,10 +126,12 @@ export default function Card({ id, name, onClick, priority = false }) {
           />
         </div>
       </motion.div>
-      {/* Name */}
-      <div className="mt-4 text-center w-full">
-        <span className="font-m6x11plus text-white">{name}</span>
-      </div>
+      {/* Name (show only if present) */}
+      {name && (
+        <div className="mt-4 text-center w-full">
+          <span className="font-m6x11plus text-white">{name}</span>
+        </div>
+      )}
     </div>
   );
 }

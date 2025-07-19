@@ -122,12 +122,12 @@ export default function JokerModal({ open, joker, onClose }: JokerModalProps) {
     shadowY.set(0);
     startFloating();
   };
+  // Only start floating after modal opening animation completes
   useEffect(() => {
-    if (open && joker) {
-      startFloating();
-    } else {
+    if (!open) {
       controls.stop();
     }
+    // Don't start floating here; will start on animation complete
     // eslint-disable-next-line
   }, [open, joker]);
   return (
@@ -165,6 +165,7 @@ export default function JokerModal({ open, joker, onClose }: JokerModalProps) {
               border: "2px solid rgba(255,255,255,0.22)",
             }}
             onClick={e => e.stopPropagation()}
+            onAnimationComplete={() => { if (open && joker) startFloating(); }}
           >
             {/* Joker Info Header */}
             <div className="w-full flex flex-col sm:flex-row items-center sm:items-end justify-between gap-2 mb-2">

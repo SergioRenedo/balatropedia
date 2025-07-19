@@ -1167,7 +1167,7 @@
     "rarity": "Rare",
     "cost": 8,
     "unlock_condition": "Discard 5 Jacks at the same time.",
-    "description": "his Joker gains X0.5 Mult for every Jack discarded this round(Currently X1 Mult)"
+    "description": "This Joker gains X0.5 Mult for every Jack discarded this round(Currently X1 Mult)"
   },
   {
     "id": "j_duo",

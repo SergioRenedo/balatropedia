@@ -38,18 +38,19 @@ export default function JokersPage() {
   const [search, setSearch] = useState("");
   const [rarity, setRarity] = useState<Rarity>("All");
   const [effect, setEffect] = useState<Effect>("None");
+  const [sort, setSort] = useState<string>("order-asc");
 
   // Modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedJoker, setSelectedJoker] = useState<(Joker & { image: string }) | null>(null);
 
   // --- FILTERING ---
-  const filteredJokers = jokers
+  let filteredJokers = jokers
     .map(j => ({
       id: j.id,
       name: j.name,
       cost: j.cost,
-      order:j.order,
+      order: j.order,
       rarity: j.rarity as Joker["rarity"],
       description: j.description,
       unlock_condition: j.unlock_condition
@@ -58,6 +59,17 @@ export default function JokersPage() {
       (rarity === "All" || j.rarity === rarity) &&
       j.name.toLowerCase().includes(search.toLowerCase())
     );
+
+  // Sorting
+  if (sort === "order-asc") {
+    filteredJokers = filteredJokers.sort((a, b) => a.order - b.order);
+  } else if (sort === "order-desc") {
+    filteredJokers = filteredJokers.sort((a, b) => b.order - a.order);
+  } else if (sort === "alpha-asc") {
+    filteredJokers = filteredJokers.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (sort === "alpha-desc") {
+    filteredJokers = filteredJokers.sort((a, b) => b.name.localeCompare(a.name));
+  }
 
 
   // Modal click handler (memoized)
@@ -107,31 +119,43 @@ export default function JokersPage() {
         {/* Go Back to Main Page Button */}
         {/* Search + filters */}
         <div className="flex flex-col sm:flex-row gap-3 w-full justify-center items-center mb-4">
-          <input
-            type="text" 
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            placeholder="Search jokers..."
-            className="px-4 py-2 font-m6x11plus rounded-xl bg-white/10 text-white placeholder-white/70 border border-white/30 hover:bg-white/20 transition outline-none shadow-md"
-          />
-          <select
-            value={rarity}
-            onChange={e => setRarity(e.target.value as Rarity)}
-            className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md"
-          >
-            {rarityOptions.map(opt => (
-              <option key={opt.value} value={opt.value}>{opt.label}</option>
-            ))}
-          </select>
-          <select
-            value={effect}
-            onChange={e => setEffect(e.target.value as Effect)}
-            className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md"
-          >
-            {effectOptions.map(opt => (
-              <option key={opt.value} value={opt.value}>{opt.label}</option>
-            ))}
-          </select>
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+            <input
+              type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder="Search jokers..."
+              className="px-4 py-2 font-m6x11plus rounded-xl bg-white/10 text-white placeholder-white/70 border border-white/30 hover:bg-white/20 transition outline-none shadow-md w-full"
+            />
+            <select
+              value={rarity}
+              onChange={e => setRarity(e.target.value as Rarity)}
+              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full"
+            >
+              {rarityOptions.map(opt => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+            <select
+              value={sort}
+              onChange={e => setSort(e.target.value)}
+              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full"
+            >
+              <option value="order-asc">Order (Lowest First)</option>
+              <option value="order-desc">Order (Highest First)</option>
+              <option value="alpha-asc">Alphabetical (A-Z)</option>
+              <option value="alpha-desc">Alphabetical (Z-A)</option>
+            </select>
+            <select
+              value={effect}
+              onChange={e => setEffect(e.target.value as Effect)}
+              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full"
+            >
+              {effectOptions.map(opt => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+          </div>
         </div>
       </section>
 
