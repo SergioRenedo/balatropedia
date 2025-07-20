@@ -217,7 +217,7 @@
       "effect": "Suit Conversion",
       "cost_mult": 1.0,
       "id": "c_star",
-      "description": "Converts up to 3 selected cards to  Diamonds"
+      "description": "Converts up to 3 selected cards to Diamonds"
 
     },
     {
@@ -230,7 +230,7 @@
       "effect": "Suit Conversion",
       "cost_mult": 1.0,
       "id": "c_moon",
-      "description": "Converts up to 3 selected cards to  Clubs"
+      "description": "Converts up to 3 selected cards to Clubs"
 
     },
     {
@@ -243,7 +243,7 @@
       "effect": "Suit Conversion",
       "cost_mult": 1.0,
       "id": "c_sun",
-      "description": "Converts up to 3 selected cards to  Hearts"
+      "description": "Converts up to 3 selected cards to Hearts"
 
     },
     {

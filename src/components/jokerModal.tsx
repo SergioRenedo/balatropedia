@@ -174,8 +174,12 @@ export default function JokerModal({ open, joker, onClose }: JokerModalProps) {
                   {joker.name}
                 </h2>
                 <div className="flex flex-row gap-3 justify-center sm:justify-start w-full mb-1">
-                  <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm ">Joker Number: {joker.order}</span>
-                  <span className="bg-black/40 text-amber-500 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm ">Cost: {joker.cost}</span>
+                  <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                    ID: <span className="text-sky-400">{joker.order}</span>
+                  </span>
+                  <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                    Cost: <span className="text-amber-300">{joker.cost}</span>
+                  </span>
                 </div>
               </div>
             </div>

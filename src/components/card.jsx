@@ -86,8 +86,8 @@ export default function Card({ id, name, onClick, priority = false }) {
             x: shadowX,
             y: shadowY,
             opacity: 0.20,
-            height: "110%",
-            width: "125%",
+            height: "108%",
+            width: "120%",
           }}
           className="absolute bg-black rounded-xl z-0 scale-90 pointer-events-none w-[160%] h-[140%]"
         />

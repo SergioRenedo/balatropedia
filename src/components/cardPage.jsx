@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "./card";
+import CardWide from "./cardWide";
 import CardModal from "./cardModal";
 import cardsData from "../app/cards.json";
 import SectionFluidBackground from "./sectionFluidBackground";
@@ -19,6 +20,8 @@ export default function CardPage() {
   // Modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
+  // Layout toggle state
+  const [wideMode, setWideMode] = useState(false);
 
   // Block background scroll when modal is open (like jokersPage)
   React.useEffect(() => {
@@ -63,8 +66,8 @@ export default function CardPage() {
         <p className="text-base text-white/90  font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
           Browse all cards from <span className="text-red-500">Balatro</span>! Search, filter by type, and discover every effect and secret interaction. Click a card for more info.
         </p>
-        {/* Section Navigation Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-6 w-full">
+        {/* Section Navigation Buttons + Layout Toggle */}
+        <div className="flex flex-wrap justify-center gap-4 mb-6 w-full items-center">
           <button
             type="button"
             className="font-m6x11plus bg-purple-700/70 text-white px-4 py-2 rounded-xl shadow-md text-base transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -86,19 +89,37 @@ export default function CardPage() {
           >
             Spectral Cards
           </button>
+          {/* Layout Toggle Button */}
+          <button
+            type="button"
+            className={`font-m6x11plus px-4 py-2 rounded-xl shadow-md text-base transition bg-red-500/50 text-white hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-blue-400 ${wideMode ? 'ring-2 ring-blue-400' : ''}`}
+            onClick={() => setWideMode(w => !w)}
+            aria-pressed={wideMode}
+            style={{ minWidth: '10rem' }}
+          >
+            {wideMode ? 'Switch to Grid View' : 'Switch to Wide View'}
+          </button>
         </div>
         {/* Tarot Cards Section with fluid SVG background */}
         <section id="tarot-section" className={`w-full rounded-2xl p-6 mb-8 ${typeStyles.Tarot} shadow-xl relative overflow-hidden`}>
           <SectionFluidBackground section="Tarot" />
           <div className="relative z-10">
             <h2 className="font-m6x11plus text-2xl sm:text-3xl text-white mb-4 text-center">Tarot Cards</h2>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-6 justify-center">
-              {tarotCards.map(card => (
-                <div key={card.name} onClick={() => handleCardClick(card)} className="cursor-pointer">
-                  <Card id={card.id} />
-                </div>
-              ))}
-            </div>
+            {wideMode ? (
+              <div className="flex flex-col gap-6">
+                {tarotCards.map(card => (
+                  <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-6 justify-center">
+                {tarotCards.map(card => (
+                  <div key={card.name} onClick={() => handleCardClick(card)} className="cursor-pointer">
+                    <Card id={card.id} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
         {/* Planet Cards Section with fluid SVG background */}
@@ -106,13 +127,21 @@ export default function CardPage() {
           <SectionFluidBackground section="Planet" />
           <div className="relative z-10">
             <h2 className="font-m6x11plus text-2xl sm:text-3xl text-white mb-4 text-center">Planet Cards</h2>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-6 justify-center">
-              {planetCards.map(card => (
-                <div key={card.name} onClick={() => handleCardClick(card)} className="cursor-pointer">
-                  <Card id={card.id} />
-                </div>
-              ))}
-            </div>
+            {wideMode ? (
+              <div className="flex flex-col gap-6">
+                {planetCards.map(card => (
+                  <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-6 justify-center">
+                {planetCards.map(card => (
+                  <div key={card.name} onClick={() => handleCardClick(card)} className="cursor-pointer">
+                    <Card id={card.id} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
         {/* Spectral Cards Section with fluid SVG background */}
@@ -120,13 +149,21 @@ export default function CardPage() {
           <SectionFluidBackground section="Spectral" />
           <div className="relative z-10">
             <h2 className="font-m6x11plus text-2xl sm:text-3xl text-white mb-4 text-center">Spectral Cards</h2>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-6 justify-center">
-              {spectralCards.map(card => (
-                <div key={card.name} onClick={() => handleCardClick(card)} className="cursor-pointer">
-                  <Card id={card.id} />
-                </div>
-              ))}
-            </div>
+            {wideMode ? (
+              <div className="flex flex-col gap-6">
+                {spectralCards.map(card => (
+                  <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-6 justify-center">
+                {spectralCards.map(card => (
+                  <div key={card.name} onClick={() => handleCardClick(card)} className="cursor-pointer">
+                    <Card id={card.id} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       </div>
