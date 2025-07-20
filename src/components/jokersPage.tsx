@@ -172,7 +172,7 @@ export default function JokersPage() {
       {/* GRID / WIDE */}
       <section className="w-full max-w-screen-2xl mx-auto px-2 sm:px-6 py-6 flex flex-col items-center">
         {wide ? (
-          <div className="flex flex-col gap-6 w-full">
+          <div className="grid gap-6 w-full grid-cols-1 xl:grid-cols-2">
             {filteredJokers.map((joker, idx) => (
               <JokersWide
                 key={joker.id}

@@ -1,0 +1,170 @@
+[
+  {
+    "id": "t_uncommon",
+    "order": 1,
+    "name": "Uncommon",
+    "ante": "1",
+    "description": "The next shop will have a free Uncommon Joker."
+  },
+  {
+    "id": "t_rare",
+    "order": 2,
+    "name": "Rare",
+    "ante": "1",
+    "description": "The next shop will have a free Rare Joker."
+  },
+  {
+    "id": "t_negative",
+    "order": 3,
+    "name": "Negative",
+    "ante": "2+",
+    "description": "The next base edition Joker you find in a Shop becomes Negative (+1 joker slot) and free."
+  },
+  {
+    "id": "t_foil",
+    "order": 4,
+    "name": "Foil",
+    "ante": "1",
+    "description": "The next base edition Joker you find in a Shop becomes Foil (+50 Chips) and free."
+  },
+  {
+    "id": "t_coupon",
+    "order": 5,
+    "name": "Coupon",
+    "ante": "1",
+    "description": "In the next shop, initial Jokers, Consumables Cards and Booster Packs are free ($0)."
+  },
+  {
+    "id": "t_double",
+    "order": 6,
+    "name": "Double",
+    "ante": "1",
+    "description": "Gives a copy of the next Tag selected (excluding Double Tags)."
+  },
+  {
+    "id": "t_holographic",
+    "order": 7,
+    "name": "Holographic",
+    "ante": "1",
+    "description": "The next base edition Joker you find in a Shop becomes Holographic (+10 Mult) and free. "
+  },
+  {
+    "id": "t_polychrome",
+    "order": 8,
+    "name": "Polychrome",
+    "ante": "1",
+    "description": "The next base edition Joker you find in a Shop becomes Polychrome (X1.5 Mult) and free."
+  },
+  {
+    "id": "t_investment",
+    "order": 9,
+    "name": "Investment",
+    "ante": "1",
+    "description": "Gain $25 after defeating the next Boss Blind."
+  },
+  {
+    "id": "t_voucher",
+    "order": 10,
+    "name": "Voucher",
+    "ante": "1",
+    "description": "Adds a Voucher to the next Shop."
+  },
+  {
+    "id": "t_top_up",
+    "order": 11,
+    "name": "Top Up",
+    "ante": "2+",
+    "description": "Create up to 2 Common Jokers (if you have space)."
+  },
+  {
+    "id": "t_juggle",
+    "order": 12,
+    "name": "Juggle",
+    "ante": "1",
+    "description": "+3 Hand Size for the next round only."
+  },
+  {
+    "id": "t_boss",
+    "order": 13,
+    "name": "Boss",
+    "ante": "1",
+    "description": "Re-rolls the next Boss Blind."
+  },
+  {
+    "id": "t_standard",
+    "order": 14,
+    "name": "Standard",
+    "ante": "2+",
+    "description": "Immediately open a free Mega Standard Pack."
+  },
+  {
+    "id": "t_charm",
+    "order": 15,
+    "name": "Charm",
+    "ante": "1",
+    "description": "Immediately open a free Mega Arcana Pack."
+  },
+  {
+    "id": "t_meteor",
+    "order": 16,
+    "name": "Meteor",
+    "ante": "2+",
+    "description": "Immediately open a free Mega Celestial Pack."
+  },
+  {
+    "id": "t_buffoon",
+    "order": 17,
+    "name": "Buffoon",
+    "ante": "2+",
+    "description": "Immediately open a free Mega Buffoon Pack."
+  },
+  {
+    "id": "t_orbital",
+    "order": 18,
+    "name": "Orbital",
+    "ante": "2+",
+    "description": "Upgrades a specified random Poker Hand by three levels."
+  },
+  {
+    "id": "t_speed",
+    "order": 19,
+    "name": "Speed",
+    "ante": "1",
+    "description": "Gives $5 for each Blind you've skipped this run."
+  },
+  {
+    "id": "t_handy",
+    "order": 20,
+    "name": "Handy",
+    "ante": "2+",
+    "description": "Gain $1 for each hand played this run."
+  },
+  {
+    "id": "t_garbage",
+    "order": 21,
+    "name": "Garbage",
+    "ante": "2+",
+    "description": "Gain $1 for each unused discard this run."
+  },
+  {
+    "id": "t_ethereal",
+    "order": 22,
+    "name": "Ethereal",
+    "ante": "2+",
+    "description": "Immediately open a free Spectral Pack."
+  },
+  {
+    "id": "t_economy",
+    "order": 23,
+    "name": "Economy",
+    "ante": "1",
+    "description": "Doubles your money (adds a maximum of $40). "
+  },
+  {
+    "id": "t_d6",
+    "order": 24,
+    "name": "D6",
+    "ante": "2+",
+    "description": "Gives $5 for each Blind you've skipped this run."
+  }
+]

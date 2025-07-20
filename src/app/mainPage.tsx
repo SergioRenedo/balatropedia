@@ -14,11 +14,11 @@ export default function MainPage() {
           Welcome to the Balatro Jokers Wiki! Choose a section to explore:
         </p>
         <nav className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
-          <Link href="/jokers" className="font-m6x11plus bg-red-600 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          <Link href="/jokersPage" className="font-m6x11plus bg-red-600 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-yellow-400">
             Jokers
           </Link>
           <Link href="/cardPage" className="font-m6x11plus bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-green-400">
-            Cards
+            Consumables
           </Link>
           <Link href="/decks" className="font-m6x11plus bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-green-400">
             Decks
@@ -27,12 +27,12 @@ export default function MainPage() {
             Vouchers
           </Link>
           <Link href="/seals" className="font-m6x11plus bg-pink-500 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-pink-400">
-            Seals
+            Modifiers
           </Link>
           <Link href="/boosters" className="font-m6x11plus bg-orange-500 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-orange-400">
             Booster Packs
           </Link>
-          <Link href="/tags" className="font-m6x11plus bg-teal-500 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-teal-400">
+          <Link href="/tagsPage" className="font-m6x11plus bg-teal-500 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-teal-400">
             Tags
           </Link>
           <Link href="/blinds" className="font-m6x11plus bg-gray-700 text-white px-6 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-gray-400">
