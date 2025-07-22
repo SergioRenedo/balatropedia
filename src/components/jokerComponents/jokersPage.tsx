@@ -4,8 +4,8 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import JokerCard from "./jokerCard";
 import JokerModal from "./jokerModal";
 import JokersWide from "./jokersWide";
-import jokers from "../app/jokers_final.json";
-import FluidBackground from "./fluidBackground";
+import jokers from "../../app/jokers_final.json";
+import FluidBackground from "../backgroundComponents/fluidBackground";
 
 
 type Rarity = "All" | "Common" | "Uncommon" | "Rare" | "Legendary";

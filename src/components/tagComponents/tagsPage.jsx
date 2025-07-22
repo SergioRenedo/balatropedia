@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import tags from "../app/tags.json";
+import tags from "../../app/tags.json";
 import Tag from "./tag";
 import TagModal from "./tagModal";
 import TagWide from "./tagWide";

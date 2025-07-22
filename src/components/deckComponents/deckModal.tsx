@@ -49,7 +49,7 @@ export default function DeckModal({ open, deck, onClose }: DeckModalProps) {
             {deck.description}
           </div>
           <div className="text-xs text-white/70 font-m6x11plus mb-4 text-center">
-            <span className="font-bold text-yellow-300">Unlock:</span> {deck.unlock_condition}
+            <span className=" text-yellow-300">Unlock:</span> {deck.unlock_condition}
           </div>
           <button
             className="mt-2 font-m6x11plus bg-blue-500/80 text-white w-full rounded-xl py-2 transition hover:bg-blue-400/80 focus:outline-none focus:ring-2 focus:ring-blue-400"

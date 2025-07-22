@@ -77,10 +77,10 @@ export default function DeckWide({ id, name, order, description, unlock_conditio
             x: shadowX,
             y: shadowY,
             opacity: 0.20,
-            height: "100%",
-            width: "120%",
+            height: "90%",
+            width: "110%",
           }}
-          className="absolute top-0 left-1/2 translate-x-[-50%] bg-black rounded-xl z-0 scale-90 pointer-events-none w-[120%]"
+          className="absolute top-0 left-1/2 translate-x-[-55%] translate-y-[5%] bg-black rounded-xl z-0 scale-90 pointer-events-none w-[120%]"
           aria-hidden="true"
         />
         {/* Card image */}

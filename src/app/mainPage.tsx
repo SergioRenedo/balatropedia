@@ -4,16 +4,18 @@
 
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import FluidBackground from "../components/fluidBackground";
-import JokerCard from "../components/jokerCard";
-import Card from "../components/card";
-import Tag from "../components/tag";
+import FluidBackground from "../components/backgroundComponents/fluidBackground";
+import JokerCard from "../components/jokerComponents/jokerCard";
+import Card from "../components/cardComponents/card";
+import Tag from "../components/tagComponents/tag";
 
 import jokers from "./jokers_final.json";
 import cardsData from "./cards.json";
 import tags from "./tags.json";
 import decks from "./decks.json";
-import DeckCard from "../components/deckCard";
+import vouchers from "./vouchers.json";
+import Voucher from "../components/voucherComponents/voucher";
+import DeckCard from "../components/deckComponents/deckCard";
 
 export default function MainPage() {
   // Types
@@ -21,11 +23,12 @@ export default function MainPage() {
   type Card = typeof cardsData.Tarot[number] | typeof cardsData.Planet[number] | typeof cardsData.Spectral[number];
   type TagType = typeof tags[number];
 
-  // Random Joker, Card, Tag, Deck (client-only)
+  // Random Joker, Card, Tag, Deck, Voucher (client-only)
   const [randomJoker, setRandomJoker] = useState<Joker | null>(null);
   const [randomCard, setRandomCard] = useState<Card | null>(null);
   const [randomTag, setRandomTag] = useState<TagType | null>(null);
   const [randomDeck, setRandomDeck] = useState<any | null>(null);
+  const [randomVoucher, setRandomVoucher] = useState<any | null>(null);
 
   useEffect(() => {
     setRandomJoker(jokers[Math.floor(Math.random() * jokers.length)]);
@@ -37,6 +40,7 @@ export default function MainPage() {
     setRandomCard(allCards[Math.floor(Math.random() * allCards.length)]);
     setRandomTag(tags[Math.floor(Math.random() * tags.length)]);
     setRandomDeck(decks[Math.floor(Math.random() * decks.length)]);
+    setRandomVoucher(vouchers[Math.floor(Math.random() * vouchers.length)]);
   }, []);
   
   return (
@@ -104,9 +108,11 @@ export default function MainPage() {
             </div>
             {/* Vouchers */}
             <div className="flex flex-col items-center w-full h-full">
-              <Link href="/vouchers" className="flex flex-col items-center w-full h-full bg-yellow-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-yellow-400/80 focus:outline-none focus:ring-2 focus:ring-yellow-400 min-h-[12rem]">
+              <Link href="/voucherPage" className="flex flex-col items-center w-full h-full bg-yellow-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-yellow-400/80 focus:outline-none focus:ring-2 focus:ring-yellow-400 min-h-[12rem]">
                 <div className="flex-1 flex items-center justify-center w-full">
-                  {/* Placeholder for future component */}
+                  {randomVoucher && (
+                    <Voucher id={randomVoucher.id} name={randomVoucher.name} onClick={() => {}} />
+                  )}
                 </div>
                 <span className="mt-2">Vouchers</span>
               </Link>

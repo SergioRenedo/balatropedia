@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Card from "./card";
 import CardWide from "./cardWide";
 import CardModal from "./cardModal";
-import cardsData from "../app/cards.json";
-import SectionFluidBackground from "./sectionFluidBackground";
+import cardsData from "../../app/cards.json";
+import SectionFluidBackground from "../backgroundComponents/sectionFluidBackground";
 
 const typeStyles = {
   Tarot: "bg-gradient-to-br from-purple-700/60 via-purple-500/40 to-purple-900/60",

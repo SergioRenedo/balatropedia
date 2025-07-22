@@ -4,8 +4,8 @@ import { useState } from "react";
 import DeckCard from "./deckCard";
 import DeckWide from "./deckWide";
 import DeckModal from "./deckModal";
-import decks from "../app/decks.json";
-import FluidBackground from "./fluidBackground";
+import decks from "../../app/decks.json";
+import FluidBackground from "../backgroundComponents/fluidBackground";
 
 type Deck = typeof decks[number];
 

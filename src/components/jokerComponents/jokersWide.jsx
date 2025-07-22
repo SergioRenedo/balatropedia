@@ -193,7 +193,7 @@ export default function JokersWide({ name, order, rarity, image, effect = "None"
               />
             </motion.div>
           ))}
-          <div className="flex items-center justify-center w-full h-full min-h-0">
+          <div className="flex items-center justify-center w-full h-full min-h-0 relative">
             <Image
               src={image}
               alt={name}
