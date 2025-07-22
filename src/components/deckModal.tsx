@@ -34,15 +34,16 @@ export default function DeckModal({ open, deck, onClose }: DeckModalProps) {
           exit={{ scale: 0.95, opacity: 0 }}
           onClick={e => e.stopPropagation()}
         >
-          <div className="w-32 h-48 mb-4 relative">
+            <div className="w-32 h-48 mb-4 relative">
             <Image
               src={`/sprites/decks/${deck.id}.webp`}
               alt={deck.name}
               fill
-              className="object-contain rounded-xl border border-white/20 bg-zinc-800/60"
+              sizes="(max-width: 768px) 128px, 128px"
+              className="object-contain rounded-xl"
               draggable={false}
             />
-          </div>
+            </div>
           <h2 className="font-m6x11plus text-2xl text-white mb-2 text-center tracking-tight">{deck.name}</h2>
           <div className="bg-white/10 rounded-lg p-2 mb-2 w-full text-white font-m6x11plus text-center text-base">
             {deck.description}
