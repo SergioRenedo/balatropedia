@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Card from "./card";
-import CardWide from "./cardWide";
-import CardModal from "./cardModal";
+import dynamic from "next/dynamic";
+const CardWide = dynamic(() => import("./cardWide"));
+const CardModal = dynamic(() => import("./cardModal"));
 import cardsData from "../../app/cards.json";
 import SectionFluidBackground from "../backgroundComponents/sectionFluidBackground";
 

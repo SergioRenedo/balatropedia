@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import JokerCard from "./jokerCard";
-import JokerModal from "./jokerModal";
-import JokersWide from "./jokersWide";
+import dynamic from "next/dynamic";
+const JokerModal = dynamic(() => import("./jokerModal"), { ssr: false });
+const JokersWide = dynamic(() => import("./jokersWide"), { ssr: false });
 import jokers from "../../app/jokers_final.json";
 import FluidBackground from "../backgroundComponents/fluidBackground";
 
@@ -180,7 +181,7 @@ export default function JokersPage() {
                 order={joker.order}
                 rarity={joker.rarity}
                 image={`/sprites/jokers/${joker.id}.webp`}
-                priority={idx < 30}
+                priority={idx < 6}
                 effect={effect}
                 description={joker.description}
                 unlock_condition={joker.unlock_condition}
@@ -204,7 +205,7 @@ export default function JokersPage() {
                 rarity={joker.rarity}
                 image={`/sprites/jokers/${joker.id}.webp`}
                 onClick={() => handleJokerClick(joker)}
-                priority={idx < 30}
+                priority={idx < 6}
                 effect={effect}
               />
             ))}

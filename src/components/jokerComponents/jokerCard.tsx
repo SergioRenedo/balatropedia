@@ -51,11 +51,11 @@ export default function JokerCard({
     const y = e.nativeEvent.offsetY;
     const px = (x / rect.width) * 2 - 1;
     const py = (y / rect.height) * 2 - 1;
-    const maxRotateX = 5;
-    const maxRotateY = 5;
+    const maxRotateX = 16; // was 5
+    const maxRotateY = 16; // was 5
     rotateX.set(-py * maxRotateX);
     rotateY.set(px * maxRotateY);
-    const maxShadow = 5;
+    const maxShadow = 16; // was 5
     shadowX.set(-px * maxShadow);
     shadowY.set(-py * maxShadow);
   };
@@ -99,7 +99,7 @@ export default function JokerCard({
   const [tiltHue, setTiltHue] = useState(70);
   useEffect(() => {
     const unsubX = rotateX.on("change", val => {
-      setTiltHue(val * 10); // 5 es la fuerza del arcoíris con el tilt (prueba 10 para más efecto)
+      setTiltHue(val * 16); // was 10, increase for more rainbow effect
     });
     return () => { unsubX(); };
   }, [rotateX]);

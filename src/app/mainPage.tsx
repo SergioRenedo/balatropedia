@@ -59,7 +59,7 @@ export default function MainPage() {
             {/* Jokers */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/jokersPage" className="flex flex-col items-center w-full h-full bg-red-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-red-400/80 focus:outline-none focus:ring-2 focus:ring-yellow-400 min-h-[12rem]">
-                <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {randomJoker && (
                     <JokerCard
                       name={""}
@@ -77,7 +77,7 @@ export default function MainPage() {
             {/* Consumables */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/cardPage" className="flex flex-col items-center w-full h-full bg-green-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-green-400/80 focus:outline-none focus:ring-2 focus:ring-green-400 min-h-[12rem]">
-                <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {randomCard && (
                     <Card
                       id={randomCard.id}
@@ -93,7 +93,7 @@ export default function MainPage() {
             {/* Decks */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/decksPage" className="flex flex-col items-center w-full h-full bg-blue-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-blue-400/80 focus:outline-none focus:ring-2 focus:ring-blue-400 min-h-[12rem]">
-                <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {randomDeck && (
                     <DeckCard
                       id={randomDeck.id}
@@ -109,9 +109,9 @@ export default function MainPage() {
             {/* Vouchers */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/voucherPage" className="flex flex-col items-center w-full h-full bg-yellow-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-yellow-400/80 focus:outline-none focus:ring-2 focus:ring-yellow-400 min-h-[12rem]">
-                <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {randomVoucher && (
-                    <Voucher id={randomVoucher.id} name={randomVoucher.name} onClick={() => {}} />
+                    <Voucher id={randomVoucher.id} name={randomVoucher.name} onClick={() => {}} priority={true} />
                   )}
                 </div>
                 <span className="mt-2">Vouchers</span>
@@ -120,7 +120,7 @@ export default function MainPage() {
             {/* Modifiers */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/seals" className="flex flex-col items-center w-full h-full bg-pink-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-pink-400/80 focus:outline-none focus:ring-2 focus:ring-pink-400 min-h-[12rem]">
-                <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {/* Placeholder for future component */}
                 </div>
                 <span className="mt-2">Modifiers</span>
@@ -129,7 +129,7 @@ export default function MainPage() {
             {/* Booster Packs */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/boosters" className="flex flex-col items-center w-full h-full bg-orange-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-orange-400/80 focus:outline-none focus:ring-2 focus:ring-orange-400 min-h-[12rem]">
-                <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {/* Placeholder for future component */}
                 </div>
                 <span className="mt-2">Booster Packs</span>
@@ -138,7 +138,7 @@ export default function MainPage() {
             {/* Tags */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/tagsPage" className="flex flex-col items-center w-full h-full bg-teal-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-teal-400/80 focus:outline-none focus:ring-2 focus:ring-teal-400 min-h-[12rem]">
-                <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {randomTag && (
                     <Tag
                       id={randomTag.id}
@@ -153,7 +153,7 @@ export default function MainPage() {
             {/* Blinds */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/blinds" className="flex flex-col items-center w-full h-full bg-gray-700/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-gray-600/80 focus:outline-none focus:ring-2 focus:ring-gray-400 min-h-[12rem]">
-                <div className="flex-1 flex items-center justify-center w-full">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {/* Placeholder for future component */}
                 </div>
                 <span className="mt-2">Blinds</span>
