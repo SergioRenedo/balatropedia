@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DeckCard from "./deckCard";
 import DeckWide from "./deckWide";
 import DeckModal from "./deckModal";
@@ -13,6 +13,17 @@ export default function DecksPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedDeck, setSelectedDeck] = useState<Deck | null>(null);
   const [wide, setWide] = useState(false);
+  // Block background scroll when modal is open
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [modalOpen]);
   // Sort decks by order
   const sortedDecks = [...decks].sort((a, b) => a.order - b.order);
 
@@ -35,21 +46,23 @@ export default function DecksPage() {
           Decks
         </h1>
         <p className="text-base text-white/90 font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
-          Browse all playable decks in <span className="text-red-400">Balatro</span>! Click a deck for details and unlock requirements.
+          Browse all playable decks in{" "}
+          <span className="text-red-400">Balatro</span>! Click a deck for details
+          and unlock requirements.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 w-full justify-center items-center mb-4">
           <button
             className={`ml-0 sm:ml-4 px-4 py-2 rounded-xl font-m6x11plus shadow-md bg-red-500/50 hover:bg-red-900 transition`}
-            onClick={() => setWide(w => !w)}
+            onClick={() => setWide((w) => !w)}
             aria-pressed={wide}
-            style={{ minWidth: '8.5rem', marginTop: '0.1rem' }}
+            style={{ minWidth: "8.5rem", marginTop: "0.1rem" }}
           >
             {wide ? "Grid View" : "Wide View"}
           </button>
         </div>
         {wide ? (
           <div className="flex flex-col gap-6 w-full mt-4">
-            {sortedDecks.map(deck => (
+            {sortedDecks.map((deck) => (
               <DeckWide
                 key={deck.id}
                 id={deck.id}
@@ -63,7 +76,7 @@ export default function DecksPage() {
           </div>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 w-full mt-4">
-            {sortedDecks.map(deck => (
+            {sortedDecks.map((deck) => (
               <DeckCard
                 key={deck.id}
                 id={deck.id}
@@ -88,7 +101,11 @@ export default function DecksPage() {
           ↑ Top
         </button>
       )}
-      <DeckModal open={modalOpen} deck={selectedDeck} onClose={() => setModalOpen(false)} />
+      <DeckModal
+        open={modalOpen}
+        deck={selectedDeck}
+        onClose={() => setModalOpen(false)}
+      />
     </main>
   );
 }

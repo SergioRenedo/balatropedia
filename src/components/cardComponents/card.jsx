@@ -21,11 +21,11 @@ export default function Card({ id, name, onClick, priority = false }) {
     const y = e.nativeEvent.offsetY;
     const px = (x / rect.width) * 2 - 1;
     const py = (y / rect.height) * 2 - 1;
-    const maxRotateX = 16; // Increased for more notable tilt
-    const maxRotateY = 16; // Increased for more notable tilt
+    const maxRotateX = 16; // match JokerCard
+    const maxRotateY = 16; // match JokerCard
     rotateX.set(-py * maxRotateX);
     rotateY.set(px * maxRotateY);
-    const maxShadow = 5;
+    const maxShadow = 16; // match JokerCard
     shadowX.set(-px * maxShadow);
     shadowY.set(-py * maxShadow);
   };

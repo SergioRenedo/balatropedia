@@ -1,0 +1,58 @@
+[
+  {
+    "id": "white",
+    "name": "White Stake",
+    "order": 1,
+    "effect": "Base difficulty",
+    "unlocks": null
+  },
+  {
+    "id": "red",
+    "name": "Red Stake",
+    "order": 2,
+    "effect": "Small Blind gives no reward money",
+    "unlocks": "Zodiac"
+  },
+  {
+    "id": "green",
+    "name": "Green Stake",
+    "order": 3,
+    "effect": "Required score scales faster for each Ante",
+    "unlocks": "Painted"
+  },
+  {
+    "id": "black",
+    "name": "Black Stake",
+    "order": 4,
+    "effect": "30% chance for Jokers in shops or booster packs to have an Eternal sticker (Can't be sold or destroyed)",
+    "unlocks": "Anaglyph"
+  },
+  {
+    "id": "blue",
+    "name": "Blue Stake",
+    "order": 5,
+    "effect": "-1 Discard",
+    "unlocks": "Plasma"
+  },
+  {
+    "id": "purple",
+    "name": "Purple Stake",
+    "order": 6,
+    "effect": "Required score scales even faster for each Ante",
+    "unlocks": null
+  },
+  {
+    "id": "orange",
+    "name": "Orange Stake",
+    "order": 7,
+    "effect": "30% chance for Jokers in shops or booster packs to have a Perishable sticker (Debuffed after 5 Rounds)",
+    "unlocks": "Erratic"
+  },
+  {
+    "id": "gold",
+    "name": "Gold Stake",
+    "order": 8,
+    "effect": "30% chance for Jokers in shops or booster packs to have a Rental sticker (Costs 3 per round, can be bought for 1). The first Soul card in a Gold seed will give a Legendary Joker that doesn't yet have a Gold Sticker, which will help with the Completionist++ achievement.",
+    "unlocks": null
+  }
+]

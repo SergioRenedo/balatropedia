@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import React from "react";
+import DeckCard from "./deckCard";
 
 export type DeckModalProps = {
   open: boolean;
@@ -28,24 +28,22 @@ export default function DeckModal({ open, deck, onClose }: DeckModalProps) {
         onClick={onClose}
       >
         <motion.div
-          className="relative bg-zinc-900/90 rounded-2xl shadow-2xl border border-white/20 p-6 w-full max-w-md mx-4 flex flex-col items-center"
+          className="relative bg-zinc-900/90 rounded-2xl shadow-2xl border border-white/20 p-3 sm:p-6 w-full max-w-xs sm:max-w-md mx-2 sm:mx-4 flex flex-col items-center max-h-[95vh] overflow-y-auto"
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
           onClick={e => e.stopPropagation()}
         >
-            <div className="w-32 h-48 mb-4 relative">
-            <Image
-              src={`/sprites/decks/${deck.id}.webp`}
-              alt={deck.name}
-              fill
-              sizes="(max-width: 768px) 128px, 128px"
-              className="object-contain rounded-xl"
-              draggable={false}
+          <div className="w-24 h-36 sm:w-32 sm:h-48 mb-3 sm:mb-4 relative flex items-center justify-center">
+            <DeckCard
+              id={deck.id}
+              name=""
+              order={deck.order}
+              priority={true}
             />
-            </div>
-          <h2 className="font-m6x11plus text-2xl text-white mb-2 text-center tracking-tight">{deck.name}</h2>
-          <div className="bg-white/10 rounded-lg p-2 mb-2 w-full text-white font-m6x11plus text-center text-base">
+          </div>
+          <h2 className="font-m6x11plus text-xl sm:text-2xl text-white mb-2 text-center tracking-tight">{deck.name}</h2>
+          <div className="bg-white/10 rounded-lg p-2 mb-2 w-full text-white font-m6x11plus text-center text-sm sm:text-base">
             {deck.description}
           </div>
           <div className="text-xs text-white/70 font-m6x11plus mb-4 text-center">

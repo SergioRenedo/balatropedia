@@ -1,0 +1,272 @@
+[
+  {
+    "id": "b_small_blind",
+    "name": "Small Blind",
+    "description": "No special effects - can be skipped to receive a Tag",
+    "minimum_ante": 1,
+    "score_requirement": "1x base",
+    "reward": 3,
+    "type": "normal"
+  },
+  {
+    "id": "b_big_blind",
+    "name": "Big Blind",
+    "description": "No special effects - can be skipped to receive a Tag",
+    "minimum_ante": 1,
+    "score_requirement": "1.5x base",
+    "reward": 4,
+    "type": "normal"
+  },
+  {
+    "id": "b_the_hook",
+    "name": "The Hook",
+    "description": "Discards 2 random cards held in hand after every played hand",
+    "minimum_ante": 1,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_ox",
+    "name": "The Ox",
+    "description": "Playing your most played hand this run sets money to 0",
+    "minimum_ante": 6,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_house",
+    "name": "The House",
+    "description": "First hand is drawn face down",
+    "minimum_ante": 2,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_wall",
+    "name": "The Wall",
+    "description": "Extra large blind",
+    "minimum_ante": 2,
+    "score_requirement": "4x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_wheel",
+    "name": "The Wheel",
+    "description": "1 in 7 cards get drawn face down during the round",
+    "minimum_ante": 2,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_arm",
+    "name": "The Arm",
+    "description": "Decrease level of played poker hand by 1 (hand levels can go as low as Level 1, and are reduced before scoring)",
+    "minimum_ante": 2,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_club",
+    "name": "The Club",
+    "description": "All Club cards are debuffed",
+    "minimum_ante": 1,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_fish",
+    "name": "The Fish",
+    "description": "Cards drawn face down after each hand played",
+    "minimum_ante": 2,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_psychic",
+    "name": "The Psychic",
+    "description": "Must play 5 cards (not all cards need to score)",
+    "minimum_ante": 1,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_goad",
+    "name": "The Goad",
+    "description": "All Spade cards are debuffed",
+    "minimum_ante": 1,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_water",
+    "name": "The Water",
+    "description": "Start with 0 discards",
+    "minimum_ante": 2,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_window",
+    "name": "The Window",
+    "description": "All Diamond cards are debuffed",
+    "minimum_ante": 1,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_manacle",
+    "name": "The Manacle",
+    "description": "-1 Hand Size",
+    "minimum_ante": 1,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_eye",
+    "name": "The Eye",
+    "description": "No repeat hand types this round (every hand played this round must be of a different type and not previously played this round)",
+    "minimum_ante": 3,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_mouth",
+    "name": "The Mouth",
+    "description": "Only one hand type can be played this round",
+    "minimum_ante": 2,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_plant",
+    "name": "The Plant",
+    "description": "All face cards are debuffed",
+    "minimum_ante": 4,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_serpent",
+    "name": "The Serpent",
+    "description": "After Play or Discard, always draw 3 cards (ignores hand size)",
+    "minimum_ante": 5,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_pillar",
+    "name": "The Pillar",
+    "description": "Cards played previously this Ante (during Small and Big Blinds) are debuffed",
+    "minimum_ante": 1,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_needle",
+    "name": "The Needle",
+    "description": "Play only 1 hand",
+    "minimum_ante": 2,
+    "score_requirement": "1x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_head",
+    "name": "The Head",
+    "description": "All Heart cards are debuffed",
+    "minimum_ante": 1,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_tooth",
+    "name": "The Tooth",
+    "description": "Lose 1 per card played",
+    "minimum_ante": 3,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_flint",
+    "name": "The Flint",
+    "description": "Base Chips and Mult for played poker hands are halved for the entire round",
+    "minimum_ante": 2,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_the_mark",
+    "name": "The Mark",
+    "description": "All face cards are drawn face down",
+    "minimum_ante": 2,
+    "score_requirement": "2x base",
+    "reward": 5,
+    "type": "boss"
+  },
+  {
+    "id": "b_amber_acorn",
+    "name": "Amber Acorn",
+    "description": "Flips and shuffles all Joker cards",
+    "minimum_ante": 8,
+    "score_requirement": "2x base",
+    "reward": 8,
+    "type": "showdown"
+  },
+  {
+    "id": "b_verdant_leaf",
+    "name": "Verdant Leaf",
+    "description": "All cards debuffed until 1 Joker sold",
+    "minimum_ante": 8,
+    "score_requirement": "2x base",
+    "reward": 8,
+    "type": "showdown"
+  },
+  {
+    "id": "b_violet_vessel",
+    "name": "Violet Vessel",
+    "description": "Very large blind",
+    "minimum_ante": 8,
+    "score_requirement": "6x base",
+    "reward": 8,
+    "type": "showdown"
+  },
+  {
+    "id": "b_crimson_heart",
+    "name": "Crimson Heart",
+    "description": "One random Joker disabled every hand (changes every hand)",
+    "minimum_ante": 8,
+    "score_requirement": "2x base",
+    "reward": 8,
+    "type": "showdown"
+  },
+  {
+    "id": "b_cerulean_bell",
+    "name": "Cerulean Bell",
+    "description": "Forces 1 card to always be selected",
+    "minimum_ante": 8,
+    "score_requirement": "2x base",
+    "reward": 8,
+    "type": "showdown"
+  }
+]

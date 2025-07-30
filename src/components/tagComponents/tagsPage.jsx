@@ -60,13 +60,14 @@ export default function TagsPage() {
             </section>
             <section className="w-full max-w-7xl mx-auto px-2 sm:px-6 py-6 flex flex-col items-center">
                 {wide ? (
-                    <div className="flex flex-col gap-6 w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                         {sortedTags.map(tag => (
                             <TagWide key={tag.id} {...tag}/>
                         ))}
                     </div>
                 ) : (
-                    <div className="grid w-full justify-center gap-x-3 gap-y-6 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 2xl:grid-cols-12">
+                    <div className="flex w-full min-h-[55vh] items-start justify-center pt-22">
+                      <div className="grid w-full justify-center gap-x-3 gap-y-6 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 2xl:grid-cols-12">
                         {sortedTags.map((tag, i) => {
                             // Wavy pattern: alternate vertical offset by column and row
                             let base = "transition-transform duration-200 hover:z-10 cursor-pointer hover:transform hover:scale-115 hover:-translate-y-1";
@@ -96,6 +97,7 @@ export default function TagsPage() {
                                 </div>
                             );
                         })}
+                      </div>
                     </div>
                 )}
             </section>

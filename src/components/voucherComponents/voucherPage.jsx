@@ -12,6 +12,12 @@ export default function VoucherPage() {
   const [selectedVoucher, setSelectedVoucher] = useState(null);
   const sortedVouchers = [...vouchers];
 
+  // Group vouchers in pairs
+  const voucherPairs = [];
+  for (let i = 0; i < sortedVouchers.length; i += 2) {
+    voucherPairs.push(sortedVouchers.slice(i, i + 2));
+  }
+
   useEffect(() => {
     if (modalOpen) {
       document.body.style.overflow = "hidden";
@@ -61,23 +67,33 @@ export default function VoucherPage() {
       <section className="w-full max-w-7xl mx-auto px-2 sm:px-6 py-6 flex flex-col items-center">
         {wide ? (
           <div className="flex flex-col gap-6 w-full">
-            {sortedVouchers.map(voucher => (
-              <VoucherWide key={voucher.id} {...voucher} onClick={undefined} />
+            {voucherPairs.map((pair, idx) => (
+              <div key={idx} className="flex flex-col sm:flex-row gap-6 w-full">
+                {pair.map(voucher => (
+                  <div key={voucher.id} className="flex-1 min-w-0">
+                    <VoucherWide {...voucher} />
+                  </div>
+                ))}
+              </div>
             ))}
           </div>
         ) : (
-          <div className="grid w-full justify-center gap-x-3 gap-y-6 grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10">
-            {sortedVouchers.map(voucher => (
-              <div
-                key={voucher.id}
-                className="transition-transform duration-200 cursor-pointer"
-                onClick={() => { setSelectedVoucher(voucher); setModalOpen(true); }}
-                tabIndex={0}
-                onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setSelectedVoucher(voucher); setModalOpen(true); } }}
-                aria-label={`View details for ${voucher.name}`}
-              >
-                <Voucher {...voucher} />
-              </div>
+          <div className="grid w-full justify-center gap-x-3 gap-y-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10">
+            {voucherPairs.map((pair, idx) => (
+              <React.Fragment key={idx}>
+                {pair.map(voucher => (
+                  <div
+                    key={voucher.id}
+                    className="transition-transform duration-200 cursor-pointer"
+                    onClick={() => { setSelectedVoucher(voucher); setModalOpen(true); }}
+                    tabIndex={0}
+                    onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setSelectedVoucher(voucher); setModalOpen(true); } }}
+                    aria-label={`View details for ${voucher.name}`}
+                  >
+                    <Voucher {...voucher} />
+                  </div>
+                ))}
+              </React.Fragment>
             ))}
           </div>
         )}

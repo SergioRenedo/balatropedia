@@ -16,6 +16,8 @@ import decks from "./decks.json";
 import vouchers from "./vouchers.json";
 import Voucher from "../components/voucherComponents/voucher";
 import DeckCard from "../components/deckComponents/deckCard";
+import blinds from "./blinds.json";
+import Blind from "../components/blindComponents/blind";
 
 export default function MainPage() {
   // Types
@@ -23,12 +25,13 @@ export default function MainPage() {
   type Card = typeof cardsData.Tarot[number] | typeof cardsData.Planet[number] | typeof cardsData.Spectral[number];
   type TagType = typeof tags[number];
 
-  // Random Joker, Card, Tag, Deck, Voucher (client-only)
+  // Random Joker, Card, Tag, Deck, Voucher, Blind (client-only)
   const [randomJoker, setRandomJoker] = useState<Joker | null>(null);
   const [randomCard, setRandomCard] = useState<Card | null>(null);
   const [randomTag, setRandomTag] = useState<TagType | null>(null);
   const [randomDeck, setRandomDeck] = useState<any | null>(null);
   const [randomVoucher, setRandomVoucher] = useState<any | null>(null);
+  const [randomBlind, setRandomBlind] = useState<any | null>(null);
 
   useEffect(() => {
     setRandomJoker(jokers[Math.floor(Math.random() * jokers.length)]);
@@ -41,6 +44,7 @@ export default function MainPage() {
     setRandomTag(tags[Math.floor(Math.random() * tags.length)]);
     setRandomDeck(decks[Math.floor(Math.random() * decks.length)]);
     setRandomVoucher(vouchers[Math.floor(Math.random() * vouchers.length)]);
+    setRandomBlind(blinds[Math.floor(Math.random() * blinds.length)]);
   }, []);
   
   return (
@@ -132,7 +136,7 @@ export default function MainPage() {
                 <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
                   {/* Placeholder for future component */}
                 </div>
-                <span className="mt-2">Booster Packs</span>
+                <span className="mt-2">Stakes</span>
               </Link>
             </div>
             {/* Tags */}
@@ -152,9 +156,11 @@ export default function MainPage() {
             </div>
             {/* Blinds */}
             <div className="flex flex-col items-center w-full h-full">
-              <Link href="/blinds" className="flex flex-col items-center w-full h-full bg-gray-700/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-gray-600/80 focus:outline-none focus:ring-2 focus:ring-gray-400 min-h-[12rem]">
+              <Link href="/blindsPage" className="flex flex-col items-center w-full h-full bg-gray-700/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-gray-600/80 focus:outline-none focus:ring-2 focus:ring-gray-400 min-h-[12rem]">
                 <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto' }}>
-                  {/* Placeholder for future component */}
+                  {randomBlind && (
+                    <Blind id={randomBlind.id} name={randomBlind.name} order={randomBlind.order} />
+                  )}
                 </div>
                 <span className="mt-2">Blinds</span>
               </Link>

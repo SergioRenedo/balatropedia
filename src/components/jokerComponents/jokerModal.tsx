@@ -92,12 +92,13 @@ export default function JokerModal({ open, joker, onClose }: JokerModalProps) {
                 />
               </div>
               <div className="flex flex-col flex-1 items-center sm:items-start w-full">
-                <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm mb-2">Description:</span>
                 <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
                   {joker.description ? highlightDescription(joker.description) : "No description available."}
                 </div>
                 {joker.cost && (
-                  <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm mt-2">Cost: {joker.cost}</span>
+                  <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm mt-2">
+                    Cost: <span className="text-yellow-300">{joker.cost}</span>
+                  </span>
                 )}
                 {joker.unlock_condition && (
                   <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm mt-2">Unlock: {joker.unlock_condition}</span>

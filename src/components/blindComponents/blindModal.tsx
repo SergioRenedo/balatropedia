@@ -1,24 +1,27 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-import Tag from "./tag";
+import Blind from "./blind";
 
-export type TagModalProps = {
+export type BlindModalProps = {
   open: boolean;
-  tag: {
+  blind: {
     id: string | number;
     name: string;
     description?: string;
-    ante?: string | number;
+    effect?: string;
     order?: number;
+    min_ante?: string | number;
+    score_requirement?: string | number;
+    reward?: string;
   } | null;
   onClose: () => void;
 };
 
-export default function TagModal({ open, tag, onClose }: TagModalProps) {
+export default function BlindModal({ open, blind, onClose }: BlindModalProps) {
   return (
     <AnimatePresence>
-      {open && tag && (
+      {open && blind && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -36,35 +39,48 @@ export default function TagModal({ open, tag, onClose }: TagModalProps) {
             style={{ minHeight: 0, minWidth: 0, border: "2px solid rgba(255,255,255,0.22)" }}
             onClick={e => e.stopPropagation()}
           >
-            {/* Tag Info Header */}
+            {/* Blind Info Header */}
             <div className="w-full flex flex-col items-center mb-2">
               <h2 className="font-m6x11plus text-xl md:text-2xl text-white tracking-tight w-full break-words px-1 text-center mb-1">
-                {tag.name}
+                {blind.name}
               </h2>
             </div>
-            {/* Tag image and description */}
+            {/* Blind image and description + info */}
             <div className="flex flex-col sm:flex-row w-full items-center gap-3 mb-2">
               <div className="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex-shrink-0 select-none card-img" style={{transform: 'scale(1)'}}>
-                <Tag id={tag.id} name={tag.name} order={tag.order} />
+                <Blind id={blind.id} name={blind.name} order={blind.order} />
               </div>
               <div className="flex-1 flex flex-col justify-center min-w-0 gap-2">
                 <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
-                  {tag.description || "No description available."}
+                  {blind.description || "No description available."}
                 </div>
-                {(typeof tag.order !== 'undefined' || typeof tag.ante !== 'undefined') && (
-                  <div className="flex flex-row gap-2 justify-center sm:justify-start w-full mt-1">
-                    {typeof tag.order !== 'undefined' && (
-                      <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
-                        ID: <span className="text-sky-400">{tag.order}</span>
-                      </span>
-                    )}
-                    {typeof tag.ante !== 'undefined' && (
-                      <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
-                        Ante: <span className="text-amber-300">{tag.ante}</span>
-                      </span>
-                    )}
-                  </div>
-                )}
+                <div className="flex flex-wrap gap-2 justify-center sm:justify-start w-full mt-1">
+                  {typeof blind.order !== 'undefined' && (
+                    <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                      ID: <span className="text-sky-400">{blind.order}</span>
+                    </span>
+                  )}
+                  {typeof blind.effect !== 'undefined' && (
+                    <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                      Effect: <span className="text-amber-300">{blind.effect}</span>
+                    </span>
+                  )}
+                  {typeof blind.min_ante !== 'undefined' && (
+                    <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                      Min Ante: <span className="text-emerald-300">{blind.min_ante}</span>
+                    </span>
+                  )}
+                  {typeof blind.score_requirement !== 'undefined' && (
+                    <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                      Score Req: <span className="text-orange-300">{blind.score_requirement}</span>
+                    </span>
+                  )}
+                  {typeof blind.reward !== 'undefined' && (
+                    <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                      Reward: <span className="text-yellow-300">{blind.reward}</span>
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
             {/* Close button */}
