@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import vouchers from "../../app/vouchers.json";
+import vouchers from "../../app/jsondata/vouchers.json";
 import Voucher from "./voucher";
 import VoucherWide from "./voucherWide";
 import VoucherModal from "./voucherModal";

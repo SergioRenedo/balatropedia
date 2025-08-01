@@ -1,0 +1,101 @@
+"use client";
+import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+import Stake from "./stake";
+
+export type StakeModalProps = {
+  open: boolean;
+  stake: {
+    id: string | number;
+    name: string;
+    effect?: string;
+    unlocks?: string;
+    order?: number;
+  } | null;
+  onClose: () => void;
+};
+
+const stakeColors: Record<string, string> = {
+  "Red Stake": "text-red-400",
+  "Black Stake": "text-zinc-400",
+  "Gold Stake": "text-yellow-300",
+  "Platinum Stake": "text-blue-300",
+  "Antimatter Stake": "text-fuchsia-400",
+  "Glass Stake": "text-cyan-300",
+  "White Stake": "text-white",
+  "Blue Stake": "text-sky-400",
+  "Purple Stake": "text-purple-400",
+  "Orange Stake": "text-orange-400",
+  "Green Stake": "text-green-400",
+  "Bronze Stake": "text-amber-700",
+  "Silver Stake": "text-gray-300",
+};
+
+export default function StakeModal({ open, stake, onClose }: StakeModalProps) {
+  const colorClass = stake && stakeColors[stake.name] ? stakeColors[stake.name] : "text-white";
+  return (
+    <AnimatePresence>
+      {open && stake && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ type: "spring", stiffness: 220, damping: 28, duration: 0.25 }}
+          className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 backdrop-blur-sm px-1 py-2"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{ y: 70, opacity: 0, scale: 0.98 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: 70, opacity: 0, scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 200, damping: 26, duration: 0.32 }}
+            className="relative flex flex-col items-center bg-gradient-to-br from-[#232a3a]/80 via-[#2e3140]/80 to-[#3a2a4a]/80 backdrop-blur-xl border border-white/40 rounded-2xl w-full max-w-md sm:max-w-lg md:max-w-xl min-h-[220px] max-h-[90vh] p-4 overflow-y-auto"
+            style={{ minHeight: 0, minWidth: 0, border: "2px solid rgba(255,255,255,0.22)" }}
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Stake Info Header */}
+            <div className="w-full flex flex-col items-center mb-2">
+              <h2 className={`font-m6x11plus text-xl md:text-2xl ${colorClass} tracking-tight w-full break-words px-1 text-center mb-1`}>
+                {stake.name}
+              </h2>
+            </div>
+            {/* Stake image and description */}
+            <div className="flex flex-col sm:flex-row w-full items-center gap-3 mb-2">
+              <div className="relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex-shrink-0 select-none card-img" style={{transform: 'scale(1)'}}>
+                <Stake id={stake.id} name={stake.name} order={stake.order} />
+              </div>
+              <div className="flex-1 flex flex-col justify-center min-w-0 gap-2">
+                <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
+                  {stake.effect || "No effect description."}
+                </div>
+                {typeof stake.order !== 'undefined' || stake.unlocks ? (
+                  <div className="flex flex-row gap-2 justify-center sm:justify-start w-full mt-1">
+                    {typeof stake.order !== 'undefined' && (
+                      <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                        ID: <span className="text-sky-400">{stake.order}</span>
+                      </span>
+                    )}
+                    {stake.unlocks && (
+                      <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                        Unlocks: <span className="text-amber-300">{stake.unlocks}</span>
+                      </span>
+                    )}
+                  </div>
+                ) : null}
+              </div>
+            </div>
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="mt-2 font-m6x11plus bg-red-500/80 text-white w-full transition hover:bg-red-400/80 px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-2 rounded-lg sm:rounded-xl text-xs xs:text-sm sm:text-base md:text-lg"
+              tabIndex={0}
+              style={{ position: 'sticky', bottom: 0, zIndex: 10, fontSize: 'clamp(0.8rem, 2vw, 1.15rem)', padding: 'clamp(0.4rem, 1vw, 0.7rem) clamp(1rem, 3vw, 1.5rem)', borderRadius: 'clamp(0.6rem, 2vw, 1.1rem)' }}
+            >
+              Close
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}

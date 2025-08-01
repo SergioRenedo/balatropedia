@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import blinds from "../../app/blinds.json";
+import blinds from "../../app//jsondata/blinds.json";
 import Blind from "./blind";
 import dynamic from "next/dynamic";
 const BlindModal = dynamic(() => import("./blindModal"));
@@ -64,15 +64,17 @@ export default function BlindsPage() {
             <section className="w-full max-w-7xl mx-auto px-2 sm:px-6 py-6 flex flex-col items-center">
                 {wide ? (
                     <>
-                      <div className="flex flex-col gap-6 w-full md:hidden">
-                          {sortedBlinds.map(blind => (
-                              <BlindWide key={blind.id} {...blind}/>
-                          ))}
-                      </div>
-                      <div className="hidden md:grid w-full gap-6 grid-cols-2">
-                          {sortedBlinds.map(blind => (
-                              <BlindWide key={blind.id} {...blind}/>
-                          ))}
+                      <div className="w-full rounded-2xl p-3 sm:p-6 mb-8" style={{background: 'linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%)'}}>
+                        <div className="flex flex-col gap-6 w-full md:hidden">
+                            {sortedBlinds.map(blind => (
+                                <BlindWide key={blind.id} {...blind}/>
+                            ))}
+                        </div>
+                        <div className="hidden md:grid w-full gap-6 grid-cols-2">
+                            {sortedBlinds.map(blind => (
+                                <BlindWide key={blind.id} {...blind}/>
+                            ))}
+                        </div>
                       </div>
                     </>
                 ) : (

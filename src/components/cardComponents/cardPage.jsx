@@ -3,7 +3,7 @@ import Card from "./card";
 import dynamic from "next/dynamic";
 const CardWide = dynamic(() => import("./cardWide"));
 const CardModal = dynamic(() => import("./cardModal"));
-import cardsData from "../../app/cards.json";
+import cardsData from "../../app/jsondata/cards.json";
 import SectionFluidBackground from "../backgroundComponents/sectionFluidBackground";
 
 const typeStyles = {

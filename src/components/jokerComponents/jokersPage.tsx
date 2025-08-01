@@ -5,7 +5,7 @@ import JokerCard from "./jokerCard";
 import dynamic from "next/dynamic";
 const JokerModal = dynamic(() => import("./jokerModal"), { ssr: false });
 const JokersWide = dynamic(() => import("./jokersWide"), { ssr: false });
-import jokers from "../../app/jokers_final.json";
+import jokers from "../../app/jsondata/jokers_final.json";
 import FluidBackground from "../backgroundComponents/fluidBackground";
 
 

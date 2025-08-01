@@ -11,7 +11,7 @@ export type BlindModalProps = {
     description?: string;
     effect?: string;
     order?: number;
-    min_ante?: string | number;
+    minimum_ante?: string | number;
     score_requirement?: string | number;
     reward?: string;
   } | null;
@@ -65,9 +65,9 @@ export default function BlindModal({ open, blind, onClose }: BlindModalProps) {
                       Effect: <span className="text-amber-300">{blind.effect}</span>
                     </span>
                   )}
-                  {typeof blind.min_ante !== 'undefined' && (
+                  {typeof (blind.minimum_ante) !== 'undefined' && (
                     <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
-                      Min Ante: <span className="text-emerald-300">{blind.min_ante}</span>
+                      Min Ante: <span className="text-emerald-300">{blind.minimum_ante}</span>
                     </span>
                   )}
                   {typeof blind.score_requirement !== 'undefined' && (
