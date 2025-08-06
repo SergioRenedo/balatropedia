@@ -55,7 +55,7 @@ export default function StakeModal({ open, stake, onClose }: StakeModalProps) {
           >
             {/* Stake Info Header */}
             <div className="w-full flex flex-col items-center mb-2">
-              <h2 className={`font-m6x11plus text-xl md:text-2xl ${colorClass} tracking-tight w-full break-words px-1 text-center mb-1`}>
+              <h2 className={`font-m6x11plus text-2xl md:text-3xl lg:text-4xl ${colorClass} tracking-tight w-full break-words px-1 text-center mb-2`}>
                 {stake.name}
               </h2>
             </div>
@@ -65,18 +65,18 @@ export default function StakeModal({ open, stake, onClose }: StakeModalProps) {
                 <Stake id={stake.id} name={stake.name} order={stake.order} />
               </div>
               <div className="flex-1 flex flex-col justify-center min-w-0 gap-2">
-                <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
+                <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
                   {stake.effect || "No effect description."}
                 </div>
                 {typeof stake.order !== 'undefined' || stake.unlocks ? (
                   <div className="flex flex-row gap-2 justify-center sm:justify-start w-full mt-1">
                     {typeof stake.order !== 'undefined' && (
-                      <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                      <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-lg sm:text-xl md:text-2xl text-white">
                         ID: <span className="text-sky-400">{stake.order}</span>
                       </span>
                     )}
                     {stake.unlocks && (
-                      <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm text-white">
+                      <span className="bg-black/40 font-m6x11plus rounded-xl px-2 py-1 text-lg sm:text-xl md:text-2xl text-white">
                         Unlocks: <span className="text-amber-300">{stake.unlocks}</span>
                       </span>
                     )}
@@ -87,9 +87,9 @@ export default function StakeModal({ open, stake, onClose }: StakeModalProps) {
             {/* Close button */}
             <button
               onClick={onClose}
-              className="mt-2 font-m6x11plus bg-red-500/80 text-white w-full transition hover:bg-red-400/80 px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-2 rounded-lg sm:rounded-xl text-xs xs:text-sm sm:text-base md:text-lg"
+              className="mt-2 font-m6x11plus bg-red-500/80 text-white w-full transition hover:bg-red-700 px-4 py-2 rounded-lg text-base shadow-sm border border-white/20"
               tabIndex={0}
-              style={{ position: 'sticky', bottom: 0, zIndex: 10, fontSize: 'clamp(0.8rem, 2vw, 1.15rem)', padding: 'clamp(0.4rem, 1vw, 0.7rem) clamp(1rem, 3vw, 1.5rem)', borderRadius: 'clamp(0.6rem, 2vw, 1.1rem)' }}
+              style={{ position: 'sticky', bottom: 0, zIndex: 10, fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)', borderRadius: 'clamp(0.5rem, 1vw, 0.8rem)' }}
             >
               Close
             </button>

@@ -41,19 +41,17 @@ export default function VoucherModal({ open, voucher, onClose }) {
                 />
               </div>
               <div className="flex flex-col flex-1 items-center sm:items-start w-full">
-                <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm mb-2">Effect:</span>
-                <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
+                <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
                   {voucher.effect ? voucher.effect : "No effect."}
-                  {voucher.unlock && <><br /><span className=" text-xl">Unlock: {voucher.unlock}</span></>}
-                  {voucher.note && <><br /><span className="text-amber-200 text-xs sm:text-sm mt-1">{voucher.note}</span></>}
+                  {voucher.unlock && <><br /><span className=" text-lg sm:text-xl md:text-2xl">Unlock: {voucher.unlock}</span></>}
                 </div>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="mt-2 font-m6x11plus bg-red-500/80 text-white w-full transition hover:bg-red-400/80 px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-2 rounded-lg sm:rounded-xl text-xs xs:text-sm sm:text-base md:text-lg"
+              className="mt-2 font-m6x11plus bg-red-500/80 text-white w-full transition hover:bg-red-700 px-4 py-2 rounded-lg text-base shadow-sm border border-white/20"
               tabIndex={0}
-              style={{ position: 'sticky', bottom: 0, zIndex: 10, fontSize: 'clamp(0.8rem, 2vw, 1.15rem)', padding: 'clamp(0.4rem, 1vw, 0.7rem) clamp(1rem, 3vw, 1.5rem)', borderRadius: 'clamp(0.6rem, 2vw, 1.1rem)' }}
+              style={{ position: 'sticky', bottom: 0, zIndex: 10, fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)', borderRadius: 'clamp(0.5rem, 1vw, 0.8rem)' }}
             >
               Close
             </button>

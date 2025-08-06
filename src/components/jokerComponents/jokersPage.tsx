@@ -109,15 +109,15 @@ export default function JokersPage() {
         <div className="flex w-full justify-center mb-4">
           <a
             href="/"
-            className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl shadow-lg text-base sm:text-lg transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-xs text-center"
+            className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-xs text-center"
           >
             Back to Main Page
           </a>
         </div>
-        <h1 className="font-m6x11plus text-4xl md:text-5xl text-white drop-shadow-lg mb-2 text-center tracking-tight">
-          Balatro Jokers Database
+        <h1 className="font-m6x11plus text-5xl md:text-6xl text-white drop-shadow-lg mb-2 text-center tracking-tight">
+          Balatro Jokers
         </h1>
-        <p className="text-base text-white/90 drop-shadow font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
+        <p className="text-2xl text-white/90 drop-shadow font-m6x11plus md:text-xl mb-6 text-center max-w-2xl">
           Browse all Jokers from <span className="text-red-500">Balatro</span>!
           Search, filter by rarity, and discover every effect and secret interaction. Click a Joker for more info.
         </p>
@@ -128,12 +128,12 @@ export default function JokersPage() {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search jokers..."
-              className="px-4 py-2 font-m6x11plus rounded-xl bg-white/10 text-white placeholder-white/70 border border-white/30 hover:bg-white/20 transition outline-none shadow-md w-full"
+              className="px-4 py-2 font-m6x11plus rounded-xl bg-white/10 text-white placeholder-white/70 border border-white/30 hover:bg-white/20 transition outline-none shadow-md w-full text-2xl"
             />
             <select
               value={rarity}
               onChange={e => setRarity(e.target.value as Rarity)}
-              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full"
+              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full text-2xl"
             >
               {rarityOptions.map(opt => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -142,7 +142,7 @@ export default function JokersPage() {
             <select
               value={sort}
               onChange={e => setSort(e.target.value)}
-              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full"
+              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full text-2xl"
             >
               <option value="order-asc">Order (Lowest First)</option>
               <option value="order-desc">Order (Highest First)</option>
@@ -152,14 +152,14 @@ export default function JokersPage() {
             <select
               value={effect}
               onChange={e => setEffect(e.target.value as Effect)}
-              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full"
+              className="px-4 py-2 font-m6x11plus rounded-xl border bg-black/30 text-white border-white/30 transition outline-none shadow-md w-full text-2xl"
             >
               {effectOptions.map(opt => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
               ))}
             </select>
             <button
-              className={`ml-0 sm:ml-4 px-4 py-2 rounded-xl font-m6x11plus shadow-md bg-red-500/50  hover:bg-red-900 transition`}
+            className={`ml-0 sm:ml-4 px-4 py-2 rounded-xl font-m6x11plus shadow-md bg-red-500/50  hover:bg-red-900 transition text-2xl`}
               onClick={() => setWide(w => !w)}
               aria-pressed={wide}
               style={{ minWidth: '8.5rem', marginTop: '0.1rem' }}
@@ -213,7 +213,7 @@ export default function JokersPage() {
         )}
         {/* Sin resultados */}
         {filteredJokers.length === 0 && (
-          <div className="my-12 text-zinc-300 font-m6x11plus text-xl">No jokers found :(</div>
+          <div className="my-12 text-zinc-300 font-m6x11plus text-2xl">No jokers found :</div>
         )}
 
         {/* Go Back to Top Button */}

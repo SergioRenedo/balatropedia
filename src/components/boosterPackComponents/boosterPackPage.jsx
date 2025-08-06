@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import boosterPacksData from "../../app/jsondata/booster_packs.json";
-const BoosterPack = dynamic(() => import("./boosterPack"));
-const BoosterPackWide = dynamic(() => import("./boosterPackWide"));
-const BoosterPackModal = dynamic(() => import("./boosterPackModal"));
+const BoosterPack = dynamic(() => import("./boosterPack"), { ssr: false });
+const BoosterPackWide = React.lazy(() => import("./boosterPackWide"));
+const BoosterPackModal = React.lazy(() => import("./boosterPackModal"));
 
 const categoryStyles = {
   Arcana: "bg-gradient-to-br from-purple-700 to-purple-900",
@@ -58,17 +58,17 @@ export default function BoosterPackPage() {
       <div className="flex justify-center w-full mb-4">
         <a
           href="/"
-          className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl shadow-lg text-base sm:text-lg transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full sm:w-auto text-center"
+          className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl shadow-lg text-xl sm:text-2xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full sm:w-auto text-center"
           style={{ maxWidth: '20rem' }}
         >
           Back to Main Page
         </a>
       </div>
       <div className="w-full max-w-3xl sm:max-w-4xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-screen-2xl flex flex-col items-center gap-12">
-        <h1 className="font-m6x11plus text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white text-center mb-2 tracking-tight">
+        <h1 className="font-m6x11plus text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white text-center mb-2 tracking-tight">
           Booster Packs
         </h1>
-        <p className="text-base text-white/90 font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
+        <p className="text-xl text-white/90 font-m6x11plus md:text-2xl mb-6 text-center max-w-2xl">
           Browse all <span className="text-amber-400">Booster Packs</span> from <span className="text-red-500">Balatro</span>! Click a pack for more info. Toggle wide/grid view for shop shelf or sale display.
         </p>
         {/* Section Navigation Buttons + Layout Toggle */}
@@ -77,7 +77,7 @@ export default function BoosterPackPage() {
             <button
               key={cat}
               type="button"
-              className={`font-m6x11plus px-4 py-2 rounded-xl shadow-md text-base transition-transform duration-300 ease-in-out text-white focus:outline-none focus:ring-2 focus:ring-white hover:brightness-125 ${categoryStyles[cat]}`}
+              className={`font-m6x11plus px-4 py-2 rounded-xl shadow-md text-xl sm:text-2xl transition-transform duration-300 ease-in-out text-white focus:outline-none focus:ring-2 focus:ring-white hover:brightness-125 ${categoryStyles[cat]}`}
               onClick={() => document.getElementById(`${cat.toLowerCase()}-section`)?.scrollIntoView({ behavior: 'smooth' })}
             >
               {cat} Packs
@@ -86,7 +86,7 @@ export default function BoosterPackPage() {
           {/* Layout Toggle Button */}
           <button
             type="button"
-            className={`font-m6x11plus px-4 py-2 rounded-xl shadow-md text-base transition bg-amber-500/60 text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-400 ${wideMode ? 'ring-2 ring-amber-400' : ''}`}
+            className={`font-m6x11plus px-4 py-2 rounded-xl shadow-md text-xl sm:text-2xl transition bg-amber-500/60 text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-400 ${wideMode ? 'ring-2 ring-amber-400' : ''}`}
             onClick={() => setWideMode(w => !w)}
             aria-pressed={wideMode}
             style={{ minWidth: '10rem' }}
@@ -95,72 +95,74 @@ export default function BoosterPackPage() {
           </button>
         </div>
         {/* Booster Pack Sections */}
-        {sectionOrder.map(cat => (
-          <section
-            key={cat}
-            id={`${cat.toLowerCase()}-section`}
-            className={`w-full rounded-2xl p-6 mb-8 ${categoryStyles[cat]} shadow-xl relative overflow-hidden`}
-          >
-            <div className="relative z-10">
-              <h2 className="font-m6x11plus text-2xl sm:text-3xl text-white mb-4 text-center">{cat} Packs</h2>
-              {wideMode ? (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {Array.from(new Map(packsByCategory[cat].map(pack => [pack.name, pack])).values()).map(pack => (
-                    <div key={pack.id} className="w-full flex justify-center">
-                      <BoosterPackWide
-                        id={pack.id}
-                        name={pack.name}
-                        image={pack.image}
-                        cost={pack.cost}
-                        size={pack.size}
-                        effect={pack.effect}
-                        priority={true}
-                        onClick={() => handlePackClick(pack)}
-                      />
+        <React.Suspense fallback={<div className="text-white text-center w-full py-8">Loading packs...</div>}>
+          {sectionOrder.map(cat => (
+            <section
+              key={cat}
+              id={`${cat.toLowerCase()}-section`}
+              className={`w-full rounded-2xl p-6 mb-8 ${categoryStyles[cat]} shadow-xl relative overflow-hidden`}
+            >
+              <div className="relative z-10">
+                <h2 className="font-m6x11plus text-3xl sm:text-4xl text-white mb-4 text-center">{cat} Packs</h2>
+                {wideMode ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {Array.from(new Map(packsByCategory[cat].map(pack => [pack.name, pack])).values()).map((pack, idx) => (
+                      <div key={pack.id} className="w-full flex justify-center">
+                        <BoosterPackWide
+                          id={pack.id}
+                          name={pack.name}
+                          image={pack.image}
+                          cost={pack.cost}
+                          size={pack.size}
+                          effect={pack.effect}
+                          priority={idx < 2}
+                          onClick={() => handlePackClick(pack)}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  packsByCategory[cat].length <= 4 ? (
+                    <div className="w-full flex justify-center">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6" style={{ minHeight: '10rem' }}>
+                        {packsByCategory[cat].map((pack, idx) => (
+                          <div key={pack.id} onClick={() => handlePackClick(pack)} className="cursor-pointer flex justify-center">
+                            <BoosterPack
+                              id={pack.id}
+                              name=""
+                              image={pack.image}
+                              priority={idx < 2}
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  ))}
-                </div>
-              ) : (
-                packsByCategory[cat].length <= 4 ? (
-                  <div className="w-full flex justify-center">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6" style={{ minHeight: '10rem' }}>
-                      {packsByCategory[cat].map(pack => (
+                  ) : (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6" style={{ minHeight: '10rem' }}>
+                      {packsByCategory[cat].map((pack, idx) => (
                         <div key={pack.id} onClick={() => handlePackClick(pack)} className="cursor-pointer flex justify-center">
                           <BoosterPack
                             id={pack.id}
                             name=""
                             image={pack.image}
-                            priority={true}
+                            priority={idx < 2}
                           />
                         </div>
                       ))}
                     </div>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6" style={{ minHeight: '10rem' }}>
-                    {packsByCategory[cat].map(pack => (
-                      <div key={pack.id} onClick={() => handlePackClick(pack)} className="cursor-pointer flex justify-center">
-                        <BoosterPack
-                          id={pack.id}
-                          name=""
-                          image={pack.image}
-                          priority={true}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )
-              )}
-            </div>
-          </section>
-        ))}
+                  )
+                )}
+              </div>
+            </section>
+          ))}
+        </React.Suspense>
       </div>
       {/* Go to Top Button (hidden when modal is open) */}
       {!modalOpen && (
         <button
           type="button"
           aria-label="Go to top"
-          className="fixed bottom-6 right-6 z-50 bg-amber-700 text-white font-m6x11plus px-4 py-3 rounded-full shadow-lg text-lg transition hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-amber-400"
+          className="fixed bottom-6 right-6 z-50 bg-black text-white font-m6x11plus px-4 py-3 rounded-full shadow-lg text-2xl sm:text-3xl transition hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-white"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           ↑ Top
@@ -168,7 +170,9 @@ export default function BoosterPackPage() {
       )}
 
       {/* Booster Pack Modal */}
-      <BoosterPackModal open={modalOpen} boosterPack={selectedPack} onClose={handleCloseModal} />
+      <React.Suspense fallback={null}>
+        <BoosterPackModal open={modalOpen} boosterPack={selectedPack} onClose={handleCloseModal} />
+      </React.Suspense>
     </main>
   );
 }

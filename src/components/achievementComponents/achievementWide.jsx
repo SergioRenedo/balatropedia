@@ -17,7 +17,7 @@ export default function AchievementWide({ id, name, description }) {
       <div className="flex-1 flex flex-col justify-center min-w-0 gap-1">
         <div className="font-m6x11plus text-zinc-100 text-lg md:text-xl text-center sm:text-left break-words">{name}</div>
         <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-1 sm:p-2 shadow-inner">
-          <div className="bg-transparent rounded px-1 py-1 sm:p-2 text-zinc-900 dark:text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full break-words min-h-[2.2rem]">
+          <div className="bg-transparent rounded px-1 py-1 sm:p-2 text-zinc-900 dark:text-white font-m6x11plus text-center sm:text-left text-base sm:text-lg md:text-xl w-full break-words min-h-[2.2rem]">
             {description}
           </div>
         </div>

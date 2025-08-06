@@ -118,7 +118,7 @@ export default function DeckCard({ id, name, order, onClick, priority = false }:
       </motion.div>
       {/* Name */}
       <div className="mt-4 text-center w-full">
-        <span className="font-m6x11plus text-white">{name}</span>
+        <span className="font-m6x11plus text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">{name}</span>
       </div>
     </div>
   );

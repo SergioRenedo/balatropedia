@@ -31,22 +31,22 @@ export default function BlindsPage() {
                 <div className="flex w-full justify-center mb-4 gap-2 flex-wrap">
                     <Link
                         href="/"
-                        className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl text-base sm:text-lg transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-xs text-center"
+                        className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl text-2xl sm:text-2xl md:text-3xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-xs text-center"
                     >
                         Back to Main Page
                     </Link>
                     <button
-                        className={`font-m6x11plus px-4 py-2 rounded-xl text-base transition focus:outline-none focus:ring-2 focus:ring-blue-400 ${wide ? "bg-blue-500/80 text-white" : "bg-zinc-700/60 text-zinc-200 hover:bg-blue-400/40"}`}
+                        className={`font-m6x11plus px-4 py-2 rounded-xl text-2xl sm:text-2xl md:text-3xl transition focus:outline-none focus:ring-2 focus:ring-blue-400 ${wide ? "bg-blue-500/80 text-white" : "bg-zinc-700/60 text-zinc-200 hover:bg-blue-400/40"}`}
                         onClick={() => setWide(w => !w)}
                         aria-pressed={wide}
                     >
                         {wide ? "Grid View" : "Wide View"}
                     </button>
                 </div>
-                <h1 className="font-m6x11plus text-4xl md:text-5xl text-white mb-2 text-center tracking-tight">
+                <h1 className="font-m6x11plus text-6xl md:text-7xl text-white mb-2 text-center tracking-tight">
                     Blinds
                 </h1>
-                <p className="text-base text-white/90 font-m6x11plus md:text-lg mb-2 text-center max-w-2xl">
+                <p className="text-2xl text-white/90 font-m6x11plus md:text-2xl mb-2 text-center max-w-2xl">
                     Browse all blinds from <span className="text-red-500">Balatro</span>! Switch between grid and wide view.
                 </p>
                 {!wide && (
@@ -55,7 +55,7 @@ export default function BlindsPage() {
                       const table = document.getElementById('ante-table-section');
                       if (table) table.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
-                    className="mb-4 self-center px-5 py-2 rounded-xl font-m6x11plus bg-zinc-900/80 text-white text-base shadow hover:bg-zinc-800/90 transition focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="mb-4 self-center px-5 py-2 rounded-xl font-m6x11plus bg-zinc-900/80 text-white text-2xl shadow hover:bg-zinc-800/90 transition focus:outline-none focus:ring-2 focus:ring-blue-400"
                   >
                     Jump to Ante Table
                   </button>
@@ -91,7 +91,7 @@ export default function BlindsPage() {
                               aria-label={`View details for ${blind.name}`}
                             >
                               <Blind {...blind}/>
-                              <div className="mt-2 font-m6x11plus text-xs text-white text-center w-full break-words">
+                              <div className="mt-2 font-m6x11plus text-2xl text-white text-center w-full break-words">
                                 {blind.name}
                               </div>
                             </div>
@@ -103,13 +103,13 @@ export default function BlindsPage() {
                         <div className="w-full rounded-2xl p-3 sm:p-6 bg-zinc-900/90 border border-zinc-700 shadow-xl overflow-x-auto">
                         <div className="relative">
                           <h2
-                            className="font-m6x11plus text-xl md:text-2xl text-white mb-4 text-center tracking-tight sticky left-0 right-0 top-0 z-20 bg-transparent pointer-events-none"
+                            className="font-m6x11plus text-3xl md:text-4xl text-white mb-4 text-center tracking-tight sticky left-0 right-0 top-0 z-20 bg-transparent pointer-events-none"
                             style={{ minWidth: '20rem' }}
                           >
                             Ante Level Base Chip Requirements
                           </h2>
                         </div>
-                        <table className="min-w-full text-xs sm:text-sm md:text-base text-white font-m6x11plus border-separate border-spacing-y-1">
+                        <table className="min-w-full text-2xl sm:text-2xl md:text-3xl text-white font-m6x11plus border-separate border-spacing-y-1">
                           <thead>
                             <tr className="bg-zinc-800/80">
                               <th className="px-2 py-2 rounded-l-xl text-red-400 font-normal">Ante Level</th>
@@ -179,7 +179,7 @@ export default function BlindsPage() {
                 {!modalOpen && (
                   <button
                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                    className="fixed bottom-8 right-8 z-50 px-4 py-2 rounded-full bg-black/70 text-white font-m6x11plus shadow-lg hover:bg-black/90 transition"
+                    className="fixed bottom-8 right-8 z-50 px-4 py-2 rounded-full bg-black/70 text-white font-m6x11plus shadow-lg hover:bg-black/90 transition text-3xl sm:text-4xl"
                     aria-label="Go back to top"
                   >
                     ↑ Top

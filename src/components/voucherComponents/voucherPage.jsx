@@ -45,12 +45,12 @@ export default function VoucherPage() {
         <div className="flex w-full justify-center mb-4 gap-2 flex-wrap">
           <Link
             href="/"
-            className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl shadow-lg text-base sm:text-lg transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-xs text-center"
+            className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl shadow-lg text-2xl sm:text-lg md:text-2xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-xs text-center"
           >
             Back to Main Page
           </Link>
           <button
-            className={`font-m6x11plus px-4 py-2 rounded-xl shadow text-base transition focus:outline-none focus:ring-2 focus:ring-blue-400 ${wide ? "bg-blue-500/80 text-white" : "bg-zinc-700/60 text-zinc-200 hover:bg-blue-400/40"}`}
+            className={`font-m6x11plus px-4 py-2 rounded-xl shadow text-2xl sm:text-lg md:text-2xl transition focus:outline-none focus:ring-2 focus:ring-blue-400 ${wide ? "bg-blue-500/80 text-white" : "bg-zinc-700/60 text-zinc-200 hover:bg-blue-400/40"}`}
             onClick={() => setWide(w => !w)}
             aria-pressed={wide}
           >
@@ -61,7 +61,7 @@ export default function VoucherPage() {
           Vouchers
         </h1>
         <p className="text-base text-white/90 drop-shadow font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
-          Browse all Vouchers! Switch between grid and wide view.
+          Browse all Vouchers from <span className="text-red-500">Balatro</span>! Switch between grid and wide view.
         </p>
       </section>
       <section className="w-full max-w-7xl mx-auto px-2 sm:px-6 py-6 flex flex-col items-center">
@@ -101,7 +101,7 @@ export default function VoucherPage() {
       {!modalOpen && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 z-50 px-4 py-2 rounded-full bg-black/70 text-white font-m6x11plus shadow-lg hover:bg-black/90 transition"
+          className="fixed bottom-8 right-8 z-50 px-5 py-3 rounded-full bg-black/70 text-white font-m6x11plus shadow-lg hover:bg-black/90 transition text-xl md:text-2xl"
           aria-label="Go back to top"
         >
           ↑ Top

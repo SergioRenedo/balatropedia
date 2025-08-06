@@ -50,7 +50,7 @@ export default function AchievementPage() {
         <div className="flex flex-col items-center mb-2">
           <span className="text-6xl md:text-7xl mb-2 drop-shadow-lg">🏆</span>
           <h1 className="font-m6x11plus text-4xl md:text-5xl text-yellow-300 mb-1 text-center tracking-tight drop-shadow-lg" style={{textShadow:'0 2px 8px #0008,0 0 0 #fff'}}>
-            Hall of Fame
+            Balatro Achievements
           </h1>
           <p className="text-base text-yellow-100 font-m6x11plus md:text-lg mb-2 text-center max-w-2xl drop-shadow">
             Browse all <span className="text-yellow-300 font-bold">Balatro</span> achievements in this trophy room! Switch between grid and wide view.

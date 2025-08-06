@@ -54,20 +54,20 @@ export default function BoosterPackWide({ id, name, image, cost, size, effect, p
       </div>
       <div className="flex-1 flex flex-col justify-center min-w-0 gap-2">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
-          <div className="font-m6x11plus text-white text-lg md:text-xl text-center sm:text-left break-words">{name}</div>
+          <div className="font-m6x11plus text-white text-2xl sm:text-3xl md:text-4xl text-center sm:text-left break-words">{name}</div>
         </div>
         <div className="flex flex-col gap-2">
-          <div className="rounded-xl bg-zinc-800/80 border border-zinc-700 p-2 sm:p-3 shadow-inner">
-            <span className="bg-black/60 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm ">Effect:</span>
-            <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
+          <div className="rounded-xl bg-zinc-800/80 border border-zinc-700 p-3 sm:p-4 shadow-inner">
+            <span className="bg-black/60 text-white font-m6x11plus rounded-xl px-3 py-2 text-lg sm:text-xl">Effect:</span>
+            <div className="bg-transparent rounded-md px-3 py-3 sm:p-4 text-white font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full mb-2 sm:mb-3 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
               {effect ? highlightDescription(effect) : "No effect available."}
             </div>
           </div>
-          <div className="flex flex-row gap-2 mt-2 self-center sm:self-end">
-            <div className="font-m6x11plus text-xs md:text-sm text-zinc-300 bg-zinc-900/60 border border-zinc-700 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow">
+          <div className="flex flex-row gap-3 mt-3 self-center sm:self-end">
+            <div className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-zinc-900/60 border border-zinc-700 px-3 py-2 rounded-xl text-center whitespace-nowrap shadow">
               Cost: <span className="text-amber-400">{cost}</span>
             </div>
-            <div className="font-m6x11plus text-xs md:text-sm text-zinc-300 bg-zinc-900/60 border border-zinc-700 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow">
+            <div className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-zinc-900/60 border border-zinc-700 px-3 py-2 rounded-xl text-center whitespace-nowrap shadow">
               Size: <span className="text-sky-400">{size}</span>
             </div>
           </div>

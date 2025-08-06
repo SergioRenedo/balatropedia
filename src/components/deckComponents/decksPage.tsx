@@ -46,13 +46,11 @@ export default function DecksPage() {
           Decks
         </h1>
         <p className="text-base text-white/90 font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
-          Browse all playable decks in{" "}
-          <span className="text-red-400">Balatro</span>! Click a deck for details
-          and unlock requirements.
+          <span className="text-2xl sm:text-xl md:text-2xl">Browse all playable decks in <span className="text-red-400">Balatro</span>! Click a deck for details and unlock requirements.</span>
         </p>
         <div className="flex flex-col sm:flex-row gap-3 w-full justify-center items-center mb-4">
           <button
-            className={`ml-0 sm:ml-4 px-4 py-2 rounded-xl font-m6x11plus shadow-md bg-red-500/50 hover:bg-red-900 transition`}
+            className={`ml-0 sm:ml-4 px-4 py-2 rounded-xl font-m6x11plus shadow-md bg-red-500/50 hover:bg-red-900 transition text-lg sm:text-xl md:text-2xl`}
             onClick={() => setWide((w) => !w)}
             aria-pressed={wide}
             style={{ minWidth: "8.5rem", marginTop: "0.1rem" }}
@@ -95,7 +93,7 @@ export default function DecksPage() {
       {!modalOpen && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 z-50 px-4 py-2 rounded-full bg-black/70 text-white font-m6x11plus shadow-lg hover:bg-black/90 transition"
+          className="fixed bottom-8 right-8 z-50 px-4 py-2 rounded-full bg-black/70 text-white font-m6x11plus shadow-lg hover:bg-black/90 transition text-2xl sm:text-3xl"
           aria-label="Go back to top"
         >
           ↑ Top

@@ -69,30 +69,30 @@ export default function JokersWide({ name, order, rarity, image, effect = "None"
       </div>
       <div className="flex-1 flex flex-col justify-center min-w-0 gap-2">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
-          <div className="font-m6x11plus text-zinc-100 text-lg md:text-xl text-center sm:text-left break-words">{name}</div>
+          <div className="font-m6x11plus text-zinc-100 text-xl sm:text-2xl md:text-3xl text-center sm:text-left break-words sm:pl-4">{name}</div>
         </div>
         <div className="flex flex-col gap-2">
-          <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-2 sm:p-3 shadow-inner">
-            <span className="bg-black/30 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm ">Description:</span>
-            <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
+          <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-3 sm:p-4 shadow-inner">
+            <span className="bg-black/30 text-white font-m6x11plus rounded-xl px-2 py-1 text-base sm:text-lg ">Description:</span>
+            <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
               {description ? highlightDescription(description) : "No description available."}
             </div>
           </div>
-          <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-2 sm:p-3 shadow-inner">
-            <span className="bg-black/30 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm mt-2">Unlock Condition:</span>
-            <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 sm:mb-2 break-words max-h-24 sm:max-h-32 md:max-h-40 overflow-auto">
+          <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-3 sm:p-4 shadow-inner">
+            <span className="bg-black/30 text-white font-m6x11plus rounded-xl px-2 py-1 text-base sm:text-lg mt-2">Unlock Condition:</span>
+            <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full mb-1 sm:mb-2 break-words max-h-24 sm:max-h-32 md:max-h-40 overflow-auto">
               {unlock_condition ? unlock_condition : "Available from the start."}
             </div>
           </div>
           {(typeof cost !== 'undefined' && cost !== null) || (typeof order !== 'undefined' && order !== null) ? (
             <div className="flex flex-row gap-2 mt-2 self-center sm:self-end">
               {typeof cost !== 'undefined' && cost !== null && (
-                <div className="font-m6x11plus text-xs md:text-sm text-zinc-300 bg-white/20 backdrop-blur-sm border border-white/30 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow">
+                <div className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-white/20 backdrop-blur-sm border border-white/30 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow">
                   Cost: <span className="text-amber-300">{cost}</span>
                 </div>
               )}
               {typeof order !== 'undefined' && order !== null && (
-                <div className="font-m6x11plus text-xs md:text-sm text-zinc-300 bg-white/20 backdrop-blur-sm border border-white/30 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow">
+                <div className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-white/20 backdrop-blur-sm border border-white/30 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow">
                   ID: <span className="text-sky-300">{order}</span>
                 </div>
               )}

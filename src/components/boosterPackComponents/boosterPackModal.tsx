@@ -77,7 +77,7 @@ export default function BoosterPackModal({ open, boosterPack, onClose }: Booster
             style={{ minHeight: 0, minWidth: 0, boxShadow: '0 12px 40px 0 rgba(60, 40, 120, 0.35)', border: "2px solid rgba(255,255,255,0.22)" }}
             onClick={e => e.stopPropagation()}
           >
-            <h2 className="font-m6x11plus text-xl md:text-2xl text-white tracking-tight w-full break-words px-1 text-center mb-2">
+            <h2 className="font-m6x11plus text-3xl sm:text-4xl md:text-5xl text-white tracking-tight w-full break-words px-1 text-center mb-4">
               {boosterPack.name}
             </h2>
             <div className="flex flex-col sm:flex-row w-full items-center gap-4 mb-2">
@@ -91,19 +91,19 @@ export default function BoosterPackModal({ open, boosterPack, onClose }: Booster
                 />
               </div>
               <div className="flex flex-col flex-1 items-center sm:items-start w-full">
-                <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 text-xs sm:text-sm mb-2">Effect:</span>
-                <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
+                <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-3 py-2 text-lg sm:text-xl md:text-2xl mb-3">Effect:</span>
+                <div className="bg-transparent rounded-md px-3 py-3 sm:p-4 text-white font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full mb-2 sm:mb-3 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
                   {boosterPack.effect ? highlightDescription(boosterPack.effect) : "No effect available."}
                 </div>
-                <div className="flex flex-col sm:flex-row gap-2 mt-2 self-center sm:self-start w-full">
-                  <span className="font-m6x11plus text-xs md:text-sm text-zinc-300 bg-black/40 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row gap-3 mt-3 self-center sm:self-start w-full">
+                  <span className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-black/40 px-3 py-2 rounded-xl text-center whitespace-nowrap shadow w-full sm:w-auto">
                     Cost: <span className="text-amber-500 dark:text-amber-300">{boosterPack.cost}</span>
                   </span>
-                  <span className="font-m6x11plus text-xs md:text-sm text-zinc-300 bg-black/40 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow w-full sm:w-auto">
+                  <span className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-black/40 px-3 py-2 rounded-xl text-center whitespace-nowrap shadow w-full sm:w-auto">
                     Size: <span className="text-sky-500 dark:text-sky-300">{boosterPack.size}</span>
                   </span>
                   {boosterPack.category && (
-                    <span className="font-m6x11plus text-xs md:text-sm text-zinc-300 bg-black/40 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow w-full sm:w-auto">
+                    <span className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-black/40 px-3 py-2 rounded-xl text-center whitespace-nowrap shadow w-full sm:w-auto">
                       Category: <span className="text-purple-400">{boosterPack.category}</span>
                     </span>
                   )}
@@ -112,9 +112,9 @@ export default function BoosterPackModal({ open, boosterPack, onClose }: Booster
             </div>
             <button
               onClick={onClose}
-              className="mt-2 font-m6x11plus bg-red-500/80 text-white w-full transition hover:bg-red-400/80 px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-2 rounded-lg sm:rounded-xl text-xs xs:text-sm sm:text-base md:text-lg"
+              className="mt-6 font-m6x11plus bg-red-500/80 text-white w-full transition hover:bg-red-400/80 px-6 py-4 rounded-2xl text-2xl sm:text-3xl md:text-4xl shadow-lg focus:outline-none focus:ring-2 focus:ring-red-400"
               tabIndex={0}
-              style={{ position: 'sticky', bottom: 0, zIndex: 10, fontSize: 'clamp(0.8rem, 2vw, 1.15rem)', padding: 'clamp(0.4rem, 1vw, 0.7rem) clamp(1rem, 3vw, 1.5rem)', borderRadius: 'clamp(0.6rem, 2vw, 1.1rem)' }}
+              style={{ position: 'sticky', bottom: 0, zIndex: 10 }}
             >
               Close
             </button>

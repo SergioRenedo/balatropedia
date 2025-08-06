@@ -25,14 +25,14 @@ export default function StakeWide({ id, name, effect, unlocks, order }) {
         <Stake id={id} name={name} order={order} />
       </div>
       <div className="flex-1 flex flex-col justify-center min-w-0 gap-1">
-        <div className={`font-m6x11plus ${colorClass} text-lg md:text-xl text-center sm:text-left break-words`}>{name}</div>
+        <div className={`font-m6x11plus ${colorClass} text-2xl md:text-3xl text-center sm:text-left break-words`}>{name}</div>
         <div className="rounded-xl bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 p-1 sm:p-2 shadow-inner">
-          <div className="bg-transparent rounded px-1 py-1 sm:p-2 text-zinc-200 font-m6x11plus text-center sm:text-left text-xs sm:text-sm md:text-base w-full break-words min-h-[2.2rem]">
+          <div className="bg-transparent rounded px-1 py-1 sm:p-2 text-zinc-200 font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full break-words min-h-[2.2rem]">
             {effect}
           </div>
         </div>
         {unlocks && (
-          <div className="font-m6x11plus text-xs md:text-sm text-amber-200 bg-black/80 backdrop-blur-sm border border-zinc-800 px-2 py-1 rounded-xl text-center sm:text-right whitespace-nowrap mt-1 self-center sm:self-end shadow">
+          <div className="font-m6x11plus text-base md:text-lg text-amber-200 bg-black/80 backdrop-blur-sm border border-zinc-800 px-2 py-1 rounded-xl text-center sm:text-right whitespace-nowrap mt-1 self-center sm:self-end shadow">
             Unlocks: <span className="text-amber-300">{unlocks}</span>
           </div>
         )}

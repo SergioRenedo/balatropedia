@@ -62,30 +62,30 @@ export default function CardPage() {
       </div>
       <div className="w-full max-w-3xl sm:max-w-4xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-screen-2xl flex flex-col items-center gap-12">
         <h1 className="font-m6x11plus text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white text-center mb-2 tracking-tight">
-          Cards
+          Card consumables
         </h1>
         <p className="text-base text-white/90  font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
-          Browse all cards from <span className="text-red-500">Balatro</span>! Search, filter by type, and discover every effect and secret interaction. Click a card for more info.
+          <span className="text-lg sm:text-xl md:text-2xl">Browse all consumables from <span className="text-red-500">Balatro</span>!  Discover every consumable effect and interactions! Click a card for more info.</span>
         </p>
         {/* Section Navigation Buttons + Layout Toggle */}
         <div className="flex flex-wrap justify-center gap-4 mb-6 w-full items-center">
           <button
             type="button"
-            className="font-m6x11plus bg-purple-700/70 text-white px-4 py-2 rounded-xl shadow-md text-base transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            className="font-m6x11plus bg-purple-700/70 text-white px-4 py-2 rounded-xl shadow-md text-lg sm:text-xl md:text-2xl transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-purple-400"
             onClick={() => document.getElementById('tarot-section')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Tarot Cards
           </button>
           <button
             type="button"
-            className="font-m6x11plus bg-blue-700/70 text-white px-4 py-2 rounded-xl shadow-md text-base transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="font-m6x11plus bg-blue-700/70 text-white px-4 py-2 rounded-xl shadow-md text-lg sm:text-xl md:text-2xl transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
             onClick={() => document.getElementById('planet-section')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Planet Cards
           </button>
           <button
             type="button"
-            className="font-m6x11plus bg-indigo-700/70 text-white px-4 py-2 rounded-xl shadow-md text-base transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="font-m6x11plus bg-indigo-700/70 text-white px-4 py-2 rounded-xl shadow-md text-lg sm:text-xl md:text-2xl transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-indigo-400"
             onClick={() => document.getElementById('spectral-section')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Spectral Cards
@@ -93,7 +93,7 @@ export default function CardPage() {
           {/* Layout Toggle Button */}
           <button
             type="button"
-            className={`font-m6x11plus px-4 py-2 rounded-xl shadow-md text-base transition bg-red-500/50 text-white hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-blue-400 ${wideMode ? 'ring-2 ring-blue-400' : ''}`}
+            className={`font-m6x11plus px-4 py-2 rounded-xl shadow-md text-lg sm:text-xl md:text-2xl transition bg-red-500/50 text-white hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-blue-400 ${wideMode ? 'ring-2 ring-blue-400' : ''}`}
             onClick={() => setWideMode(w => !w)}
             aria-pressed={wideMode}
             style={{ minWidth: '10rem' }}
@@ -105,9 +105,9 @@ export default function CardPage() {
         <section id="tarot-section" className={`w-full rounded-2xl p-6 mb-8 ${typeStyles.Tarot} shadow-xl relative overflow-hidden`}>
           <SectionFluidBackground section="Tarot" />
           <div className="relative z-10">
-            <h2 className="font-m6x11plus text-2xl sm:text-3xl text-white mb-4 text-center">Tarot Cards</h2>
+            <h2 className="font-m6x11plus text-3xl sm:text-4xl md:text-5xl text-white mb-4 text-center">Tarot Cards</h2>
             {wideMode ? (
-              <div className="flex flex-col gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {tarotCards.map(card => (
                   <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
                 ))}
@@ -127,9 +127,9 @@ export default function CardPage() {
         <section id="planet-section" className={`w-full rounded-2xl p-6 mb-8 ${typeStyles.Planet} shadow-xl relative overflow-hidden`}>
           <SectionFluidBackground section="Planet" />
           <div className="relative z-10">
-            <h2 className="font-m6x11plus text-2xl sm:text-3xl text-white mb-4 text-center">Planet Cards</h2>
+            <h2 className="font-m6x11plus text-3xl sm:text-4xl md:text-5xl text-white mb-4 text-center">Planet Cards</h2>
             {wideMode ? (
-              <div className="flex flex-col gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {planetCards.map(card => (
                   <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
                 ))}
@@ -149,9 +149,9 @@ export default function CardPage() {
         <section id="spectral-section" className={`w-full rounded-2xl p-6 mb-8 ${typeStyles.Spectral} shadow-xl relative overflow-hidden`}>
           <SectionFluidBackground section="Spectral" />
           <div className="relative z-10">
-            <h2 className="font-m6x11plus text-2xl sm:text-3xl text-white mb-4 text-center">Spectral Cards</h2>
+            <h2 className="font-m6x11plus text-3xl sm:text-4xl md:text-5xl text-white mb-4 text-center">Spectral Cards</h2>
             {wideMode ? (
-              <div className="flex flex-col gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {spectralCards.map(card => (
                   <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
                 ))}
@@ -173,7 +173,7 @@ export default function CardPage() {
         <button
           type="button"
           aria-label="Go to top"
-          className="fixed bottom-6 right-6 z-50 bg-blue-700 text-white font-m6x11plus px-4 py-3 rounded-full shadow-lg text-lg transition hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="fixed bottom-6 right-6 z-50 bg-blue-700 text-white font-m6x11plus px-4 py-3 rounded-full shadow-lg text-2xl sm:text-3xl transition hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           ↑ Top

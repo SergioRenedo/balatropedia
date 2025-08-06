@@ -39,24 +39,24 @@ export default function TagsPage() {
                 <div className="flex w-full justify-center mb-4 gap-2 flex-wrap">
                     <Link
                         href="/"
-                        className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl text-base sm:text-lg transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-xs text-center"
+                        className="font-m6x11plus bg-red-500/50 text-white px-5 py-2 rounded-xl text-2xl sm:text-lg md:text-2xl transition hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full max-w-xs text-center"
                     >
                         Back to Main Page
                     </Link>
                     <button
-                        className={`font-m6x11plus px-4 py-2 rounded-xl text-base transition focus:outline-none focus:ring-2 focus:ring-blue-400 ${wide ? "bg-blue-500/80 text-white" : "bg-zinc-700/60 text-zinc-200 hover:bg-blue-400/40"}`}
+                        className={`font-m6x11plus px-4 py-2 rounded-xl text-2xl sm:text-lg md:text-2xl transition focus:outline-none focus:ring-2 focus:ring-blue-400 ${wide ? "bg-blue-500/80 text-white" : "bg-zinc-700/60 text-zinc-200 hover:bg-blue-400/40"}`}
                         onClick={() => setWide(w => !w)}
                         aria-pressed={wide}
                     >
                         {wide ? "Grid View" : "Wide View"}
                     </button>
                 </div>
-                <h1 className="font-m6x11plus text-4xl md:text-5xl text-white mb-2 text-center tracking-tight">
+                <h1 className="font-m6x11plus text-5xl md:text-5xl text-white mb-2 text-center tracking-tight">
                     Tags
                 </h1>
-                <p className="text-base text-white/90 font-m6x11plus md:text-lg mb-6 text-center max-w-2xl">
-                    Browse all tags from <span className="text-red-500">Balatro</span>! Switch between grid and wide view.
-                </p>
+            <p className="text-2xl sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-m6x11plus mb-6 text-center max-w-2xl">
+                Browse all tags from <span className="text-red-500">Balatro</span>! Switch between grid and wide view.
+            </p>
             </section>
             <section className="w-full max-w-7xl mx-auto px-2 sm:px-6 py-6 flex flex-col items-center">
                 {wide ? (
