@@ -56,8 +56,11 @@ function highlightDescription(text) {
 
 export default function JokersWide({ name, order, rarity, image, effect = "None", priority = false, description, unlock_condition, cost }) {
   return (
-    <div className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4 w-full rounded-2xl p-4 shadow-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-800/60 backdrop-blur-md backdrop-saturate-150" style={{boxShadow:'0 8px 32px 0 rgba(31,38,135,0.18)', border:'1.5px solid rgba(255,255,255,0.18)'}}>
-      <div className="relative w-28 h-44 sm:w-32 sm:h-52 md:w-36 md:h-60 flex-shrink-0 flex items-center justify-center select-none card-img rounded-xl">
+    <div
+      className="flex flex-col md:flex-row items-center md:items-stretch gap-4 md:gap-8 w-full max-w-full md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto rounded-2xl px-2 md:px-6 lg:px-10 py-3 md:py-6 shadow-xl bg-neutral-900/95 backdrop-blur-md border border-neutral-800"
+      style={{ boxShadow: '0 8px 32px 0 rgba(20,20,30,0.45)', border: '2px solid #222' }}
+    >
+      <div className="relative w-28 h-44 md:w-40 md:h-64 lg:w-52 lg:h-80 xl:w-60 xl:h-96 flex-shrink-0 flex items-center justify-center select-none card-img rounded-xl mx-auto md:mx-0">
         <JokerCard
           name={""}
           order={order}
@@ -67,33 +70,33 @@ export default function JokersWide({ name, order, rarity, image, effect = "None"
           effect={effect}
         />
       </div>
-      <div className="flex-1 flex flex-col justify-center min-w-0 gap-2">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
-          <div className="font-m6x11plus text-zinc-100 text-xl sm:text-2xl md:text-3xl text-center sm:text-left break-words sm:pl-4">{name}</div>
+      <div className="flex-1 flex flex-col justify-center min-w-0 gap-2 md:gap-4 w-full">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-1 md:gap-2 mb-1 w-full">
+          <div className="font-m6x11plus text-white text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center md:text-left break-words md:pl-4 w-full">{name}</div>
         </div>
-        <div className="flex flex-col gap-2">
-          <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-3 sm:p-4 shadow-inner">
-            <span className="bg-black/30 text-white font-m6x11plus rounded-xl px-2 py-1 text-base sm:text-lg ">Description:</span>
-            <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full mb-1 sm:mb-2 break-words max-h-32 sm:max-h-40 md:max-h-48 overflow-auto">
+        <div className="flex flex-col gap-2 md:gap-4 w-full">
+          <div className="rounded-xl bg-neutral-800/80 backdrop-blur-sm border border-neutral-700 p-2 md:p-4 lg:p-6 shadow-inner w-full">
+            <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 md:px-3 md:py-2 text-base md:text-lg lg:text-xl xl:text-2xl w-full">Description:</span>
+            <div className="bg-transparent rounded-md px-2 py-2 md:p-3 lg:p-4 text-white font-m6x11plus text-center md:text-left text-base md:text-lg lg:text-xl xl:text-2xl w-full mb-2 break-words max-h-28 md:max-h-40 lg:max-h-56 xl:max-h-64 overflow-auto">
               {description ? highlightDescription(description) : "No description available."}
             </div>
           </div>
-          <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 p-3 sm:p-4 shadow-inner">
-            <span className="bg-black/30 text-white font-m6x11plus rounded-xl px-2 py-1 text-base sm:text-lg mt-2">Unlock Condition:</span>
-            <div className="bg-transparent rounded-md px-2 py-2 sm:p-3 text-white font-m6x11plus text-center sm:text-left text-lg sm:text-xl md:text-2xl w-full mb-1 sm:mb-2 break-words max-h-24 sm:max-h-32 md:max-h-40 overflow-auto">
+          <div className="rounded-xl bg-neutral-800/80 backdrop-blur-sm border border-neutral-700 p-2 md:p-4 lg:p-6 shadow-inner w-full">
+            <span className="bg-black/40 text-white font-m6x11plus rounded-xl px-2 py-1 md:px-3 md:py-2 text-base md:text-lg lg:text-xl xl:text-2xl mt-2 w-full">Unlock Condition:</span>
+            <div className="bg-transparent rounded-md px-2 py-2 md:p-3 lg:p-4 text-white font-m6x11plus text-center md:text-left text-base md:text-lg lg:text-xl xl:text-2xl w-full mb-2 break-words max-h-16 md:max-h-32 lg:max-h-40 overflow-auto">
               {unlock_condition ? unlock_condition : "Available from the start."}
             </div>
           </div>
           {(typeof cost !== 'undefined' && cost !== null) || (typeof order !== 'undefined' && order !== null) ? (
-            <div className="flex flex-row gap-2 mt-2 self-center sm:self-end">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-3 mt-2 w-full">
               {typeof cost !== 'undefined' && cost !== null && (
-                <div className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-white/20 backdrop-blur-sm border border-white/30 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow">
-                  Cost: <span className="text-amber-300">{cost}</span>
+                <div className="font-m6x11plus text-base md:text-xl lg:text-2xl xl:text-3xl text-white bg-neutral-800/60 backdrop-blur-sm border border-neutral-700 px-2 py-1 md:px-3 md:py-2 rounded-xl text-center whitespace-nowrap shadow w-full">
+                  Cost: <span className="text-amber-400">{cost}</span>
                 </div>
               )}
               {typeof order !== 'undefined' && order !== null && (
-                <div className="font-m6x11plus text-lg sm:text-xl md:text-2xl text-zinc-300 bg-white/20 backdrop-blur-sm border border-white/30 px-2 py-1 rounded-xl text-center whitespace-nowrap shadow">
-                  ID: <span className="text-sky-300">{order}</span>
+                <div className="font-m6x11plus text-base md:text-xl lg:text-2xl xl:text-3xl text-white bg-neutral-800/60 backdrop-blur-sm border border-neutral-700 px-2 py-1 md:px-3 md:py-2 rounded-xl text-center whitespace-nowrap shadow w-full">
+                  ID: <span className="text-sky-400">{order}</span>
                 </div>
               )}
             </div>

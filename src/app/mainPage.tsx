@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import React, { useMemo } from "react";
+import Image from "next/image";
 import JokerCard from "../components/jokerComponents/jokerCard";
+import PlayingCard from "../components/playingCardComponents/playingCard";
 import Card from "../components/cardComponents/card";
 import Tag from "../components/tagComponents/tag";
 import jokers from "./jsondata/jokers_final.json";
@@ -20,6 +22,8 @@ import boosterPacks from "./jsondata/booster_packs.json";
 import BoosterPack from "../components/boosterPackComponents/boosterPack";
 import achievements from "./jsondata/achievements.json";
 import Achievement from "../components/achievementComponents/achievement";
+import modifiers from "./jsondata/modifiers.json";
+import Enhancer from "../components/enhancerComponents/enhancer";
 
 export default function MainPage() {
   // Types
@@ -37,6 +41,7 @@ export default function MainPage() {
   const [randomStake, setRandomStake] = React.useState<any | null>(null);
   const [randomBooster, setRandomBooster] = React.useState<any | null>(null);
   const [randomAchievement, setRandomAchievement] = React.useState<any | null>(null);
+  const [randomEnhancer, setRandomEnhancer] = React.useState<any | null>(null);
 
   React.useEffect(() => {
     setRandomJoker(jokers[Math.floor(Math.random() * jokers.length)]);
@@ -53,10 +58,12 @@ export default function MainPage() {
     setRandomStake(stakes[Math.floor(Math.random() * stakes.length)]);
     setRandomBooster(boosterPacks[Math.floor(Math.random() * boosterPacks.length)]);
     setRandomAchievement(achievements[Math.floor(Math.random() * achievements.length)]);
+    setRandomEnhancer(modifiers[Math.floor(Math.random() * modifiers.length)]);
   }, []);
 
   // Prevent hydration mismatch: render nothing until all randoms are set
   if (!randomJoker || !randomCard || !randomTag || !randomDeck || !randomVoucher || !randomBlind || !randomStake || !randomBooster || !randomAchievement) {
+    if (!randomEnhancer) return null;
     return null;
   }
   
@@ -72,12 +79,23 @@ export default function MainPage() {
       <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 py-8">
         <div className="w-full max-w-6xl mx-auto flex flex-col items-center gap-8 rounded-3xl bg-black/80 backdrop-blur-md shadow-lg border-4 border-yellow-300/60 p-6 sm:p-10" style={{boxShadow:'0 4px 16px 0 #000a, 0 0 0 4px #f7b73333 inset'}}>
           {/* Neon marquee header */}
-          <div className="flex flex-col items-center mb-2">
-            <span className="text-6xl md:text-7xl mb-2 drop-shadow-lg">🎰</span>
-            <h1 className="font-m6x11plus text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] 2xl:text-[10rem] text-yellow-200 text-center mb-2 tracking-tight drop-shadow-lg min-h-[8rem]" style={{textShadow:'0 2px 16px #f7b733,0 0 0 #fff'}}>
+          <div className="flex flex-col items-center">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 2xl:w-56 2xl:h-56 mb-3 sm:mb-4 md:mb-6 flex items-center justify-center relative">
+              <Image
+                src="/sprites/misc/joker.webp"
+                alt="Joker Icon"
+                fill={false}
+                width={160}
+                height={160}
+                className="object-contain animate-tumble"
+                style={{maxWidth:'80%',height:'80%'}}
+                priority
+              />
+            </div>
+            <h1 className="font-m6x11plus text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6rem] 2xl:text-[8rem] text-yellow-200 text-center mb-2 sm:mb-3 md:mb-4 tracking-tight drop-shadow-lg min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem] xl:min-h-[8rem]" style={{textShadow:'0 2px 16px #f7b733,0 0 0 #fff'}}>
               Balatropedia
             </h1>
-            <p className="text-yellow-100 font-m6x11plus text-base sm:text-lg md:text-xl text-center mb-4 max-w-2xl drop-shadow">
+            <p className="text-yellow-100 font-m6x11plus text-base sm:text-lg md:text-xl lg:text-2xl text-center mb-4 sm:mb-5 md:mb-7 max-w-2xl drop-shadow">
               Welcome to the <span className="text-pink-400 font-bold">Balatro</span> Visual Encyclopedia! Dive into a fully interactive, visually engaging compendium covering almost every aspect of the game. Explore cards, jokers, tags, decks, achievements, and more—all presented with rich visuals and intuitive navigation."
             </p>
           </div>
@@ -145,22 +163,6 @@ export default function MainPage() {
               </Link>
             </div>
             {/* Booster Packs */}
-            <div className="flex flex-col items-center w-full h-full">
-              <Link href="/BoosterPacks" className="flex flex-col items-center w-full h-full bg-pink-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-pink-400/80 focus:outline-none focus:ring-2 focus:ring-pink-400 min-h-[12rem] min-w-[8rem] border-4 border-yellow-200/60">
-                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto', minHeight: '6rem', minWidth: '6rem' }}>
-                  {randomBooster && (
-                    <BoosterPack
-                      id={randomBooster.id}
-                      name={""}
-                      image={randomBooster.image}
-                      onClick={() => {}}
-                      priority={true}
-                    />
-                  )}
-                </div>
-                <span className="mt-2">Booster Packs</span>
-              </Link>
-            </div>
             {/* Stakes */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/stakesPage" className="flex flex-col items-center w-full h-full bg-orange-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-orange-400/80 focus:outline-none focus:ring-2 focus:ring-orange-400 min-h-[12rem] min-w-[8rem] border-4 border-yellow-200/60">
@@ -199,55 +201,92 @@ export default function MainPage() {
               </Link>
             </div>
             {/* Achievements */}
+            {/* Achievements */}
             <div className="flex flex-col items-center w-full h-full">
               <Link href="/achievementsPage" className="flex flex-col items-center w-full h-full bg-lime-600/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-lime-500/80 focus:outline-none focus:ring-2 focus:ring-lime-400 min-h-[12rem] min-w-[8rem] border-4 border-yellow-200/60">
-              <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto', minHeight: '6rem', minWidth: '6rem' }}>
-                {randomAchievement && (
-                <Achievement id={randomAchievement.id} name={randomAchievement.name} />
-                )}
-              </div>
-              <span className="mt-2">Achievements</span>
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto', minHeight: '6rem', minWidth: '6rem' }}>
+                  {randomAchievement && (
+                    <Achievement id={randomAchievement.id} name={randomAchievement.name} />
+                  )}
+                </div>
+                <span className="mt-2">Achievements</span>
+              </Link>
+            </div>
+            {/* Booster Packs */}
+            <div className="flex flex-col items-center w-full h-full">
+              <Link href="/BoosterPacks" className="flex flex-col items-center w-full h-full bg-pink-500/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-pink-400/80 focus:outline-none focus:ring-2 focus:ring-pink-400 min-h-[12rem] min-w-[8rem] border-4 border-yellow-200/60">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto', minHeight: '6rem', minWidth: '6rem' }}>
+                  {randomBooster && (
+                    <BoosterPack
+                      id={randomBooster.id}
+                      name={""}
+                      image={randomBooster.image}
+                      onClick={() => {}}
+                      priority={true}
+                    />
+                  )}
+                </div>
+                <span className="mt-2">Booster Packs</span>
               </Link>
             </div>
             {/* Hands */}
             <div className="flex flex-col items-center w-full h-full">
-              <Link href="/handsPage" className="flex flex-col items-center w-full h-full bg-fuchsia-700/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-fuchsia-500/80 focus:outline-none focus:ring-2 focus:ring-fuchsia-400 min-h-[12rem] min-w-[8rem]">
+              <Link href="/handsPage" className="flex flex-col items-center w-full h-full bg-fuchsia-700/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-fuchsia-500/80 focus:outline-none focus:ring-2 focus:ring-fuchsia-400 min-h-[12rem] min-w-[8rem] border-4 border-yellow-200/60">
                 <div className="flex-1 flex items-center justify-center w-full" style={{ minHeight: '6rem', minWidth: '6rem' }}>
-                  <span className="text-4xl">🃏</span>
+                  {/* Random Planet Card preview */}
+                  {cardsData.Planet && cardsData.Planet.length > 0 ? (
+                    <Card
+                      id={cardsData.Planet[Math.floor(Math.random()*cardsData.Planet.length)].id}
+                      name={""}
+                      priority={true}
+                      onClick={() => {}}
+                    />
+                  ) : (
+                    <span className="text-4xl">🃏</span>
+                  )}
                 </div>
                 <span className="mt-2">Hands</span>
               </Link>
             </div>
-            {/* Shop */}
-            <div className="flex flex-col items-center w-full h-full">
-              <Link href="/shopPage" className="flex flex-col items-center w-full h-full bg-amber-700/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-amber-500/80 focus:outline-none focus:ring-2 focus:ring-amber-400 min-h-[12rem] min-w-[8rem]">
-                <div className="flex-1 flex items-center justify-center w-full" style={{ minHeight: '6rem', minWidth: '6rem' }}>
-                  <span className="text-4xl">🛒</span>
-                </div>
-                <span className="mt-2">Shop</span>
-              </Link>
-            </div>
+
             {/* Modifiers */}
             <div className="flex flex-col items-center w-full h-full">
-              <Link href="/modifiersPage" className="flex flex-col items-center w-full h-full bg-cyan-700/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-cyan-500/80 focus:outline-none focus:ring-2 focus:ring-cyan-400 min-h-[12rem] min-w-[8rem]">
-                <div className="flex-1 flex items-center justify-center w-full" style={{ minHeight: '6rem', minWidth: '6rem' }}>
-                  <span className="text-4xl">✨</span>
+              <Link href="/enhancersPage" className="flex flex-col items-center w-full h-full bg-cyan-700/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-cyan-500/80 focus:outline-none focus:ring-2 focus:ring-cyan-400 min-h-[12rem] min-w-[8rem] border-4 border-yellow-200/60">
+                <div className="flex-1 flex items-center justify-center w-full" style={{ imageRendering: 'auto', minHeight: '6rem', minWidth: '6rem' }}>
+                  {randomEnhancer && (
+                    <Enhancer
+                      id={randomEnhancer.id}
+                      name={""}
+                      type={randomEnhancer.type}
+                      effect={randomEnhancer.effect}
+                      priority={true}
+                      onClick={() => {}}
+                    />
+                  )}
                 </div>
                 <span className="mt-2">Modifiers</span>
               </Link>
             </div>
             {/* Card Playground */}
             <div className="flex flex-col items-center w-full h-full">
-              <Link href="/cardPlayground" className="flex flex-col items-center w-full h-full bg-violet-800/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-violet-600/80 focus:outline-none focus:ring-2 focus:ring-violet-400 min-h-[12rem] min-w-[8rem]">
+              <Link href="/playgroundPage" className="flex flex-col items-center w-full h-full bg-violet-800/80 text-white font-m6x11plus px-4 py-3 rounded-xl shadow-lg text-lg sm:text-xl transition hover:scale-105 hover:bg-violet-600/80 focus:outline-none focus:ring-2 focus:ring-violet-400 min-h-[12rem] min-w-[8rem] border-4 border-yellow-200/60">
                 <div className="flex-1 flex items-center justify-center w-full" style={{ minHeight: '6rem', minWidth: '6rem' }}>
-                  <span className="text-4xl">🧪</span>
+                  {/* Random PlayingCard preview */}
+                  <div className="flex items-center justify-center w-full h-full">
+                    <PlayingCard
+                      enhancer={`/sprites/enhancers/enhancer_${Math.floor(Math.random()*9)+1}.webp`}
+                      card={`/sprites/playing_cards/card_r${Math.floor(Math.random()*4)}_c${Math.floor(Math.random()*13)}.webp`}
+                      seal={`/sprites/enhancers/seal_${Math.floor(Math.random()*5)}.webp`}
+                      priority={true}
+                    />
+                  </div>
                 </div>
                 <span className="mt-2">Card Playground</span>
               </Link>
             </div>
           </nav>
           <footer className="mt-12 text-xs text-white/40 font-m6x11plus text-center">
-            &copy; 2025 Balatropedia. All rights reserved.
+            2025 Balatropedia. Fan made project.
           </footer>
         </div>
       </div>

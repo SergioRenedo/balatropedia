@@ -1,0 +1,68 @@
+[
+  {
+    "id": "custom_enhancer_1",
+    "name": "Bonus Card",
+    "type": "enhancement",
+    "effect": "Gives +30 chips when scored."
+  },
+  {
+    "id": "custom_enhancer_2",
+    "name": "Mult Card",
+    "type": "enhancement",
+    "effect": "Gives +4 mult when scored."
+  },
+  {
+    "id": "custom_enhancer_3",
+    "name": "Wild Card",
+    "type": "enhancement",
+    "effect": "Counts as all suits at once."
+  },
+  {
+    "id": "custom_enhancer_4",
+    "name": "Glass Card",
+    "type": "enhancement",
+    "effect": "Gives x2 mult when scored. 1 in 4 chance to destroy card after scoring."
+  },
+  {
+    "id": "custom_enhancer_5",
+    "name": "Steel Card",
+    "type": "enhancement",
+    "effect": "Gives x1.5 mult while held in hand."
+  },
+  {
+    "id": "custom_enhancer_6",
+    "name": "Gold Card",
+    "type": "enhancement",
+    "effect": "Gives $3 if held in hand at end of round."
+  },
+  {
+    "id": "custom_enhancer_7",
+    "name": "Lucky Card",
+    "type": "enhancement",
+    "effect": "1 in 5 chance to give +20 mult, 1 in 15 chance to give $20. Both can trigger."
+  },
+  {
+    "id": "custom_enhancer_8",
+    "name": "Gold Seal",
+    "type": "seal",
+    "effect": "Earn $3 when played and scores."
+  },
+  {
+    "id": "custom_enhancer_9",
+    "name": "Red Seal",
+    "type": "seal",
+    "effect": "Retrigger this card 1 time. Applies to scoring and in-hand effects."
+  },
+  {
+    "id": "custom_enhancer_10",
+    "name": "Blue Seal",
+    "type": "seal",
+    "effect": "Creates a Planet card for final played poker hand of round if held in hand."
+  },
+  {
+    "id": "custom_enhancer_11",
+    "name": "Purple Seal",
+    "type": "seal",
+    "effect": "Creates a Tarot card when discarded (by player or The Hook)."
+  }
+]

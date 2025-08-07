@@ -16,7 +16,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+@keyframes tumble {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50% { transform: rotate(8deg) scale(1.07); }
+}
+.animate-tumble {
+  animation: tumble 2.8s ease-in-out infinite;
+}
 
 .modal-open {
   overflow: hidden !important;

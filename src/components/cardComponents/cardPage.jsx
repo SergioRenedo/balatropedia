@@ -107,7 +107,7 @@ export default function CardPage() {
           <div className="relative z-10">
             <h2 className="font-m6x11plus text-3xl sm:text-4xl md:text-5xl text-white mb-4 text-center">Tarot Cards</h2>
             {wideMode ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {tarotCards.map(card => (
                   <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
                 ))}
@@ -129,7 +129,7 @@ export default function CardPage() {
           <div className="relative z-10">
             <h2 className="font-m6x11plus text-3xl sm:text-4xl md:text-5xl text-white mb-4 text-center">Planet Cards</h2>
             {wideMode ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {planetCards.map(card => (
                   <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
                 ))}
@@ -151,7 +151,7 @@ export default function CardPage() {
           <div className="relative z-10">
             <h2 className="font-m6x11plus text-3xl sm:text-4xl md:text-5xl text-white mb-4 text-center">Spectral Cards</h2>
             {wideMode ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {spectralCards.map(card => (
                   <CardWide key={card.name} id={card.id} name={card.name} description={card.description} onClick={() => handleCardClick(card)} />
                 ))}
